@@ -20,8 +20,6 @@ extension Date {
     }
     
     var endOfWeek: Date? {
-//        let comp: DateComponents = Gregorian.calendar.dateComponents([.month], from: self)
-//       return Gregorian.calendar.date(byAdding: comp, to: startOfWeek!)
         return Gregorian.calendar.date(byAdding: .day, value: 6, to: startOfWeek!)
     }
     
