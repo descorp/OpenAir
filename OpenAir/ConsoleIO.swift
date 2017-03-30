@@ -17,7 +17,6 @@ enum OutputType {
 }
 
 enum OptionType: String {
-    case palindrome = "p"
     case submit = "submit"
     case help = "h"
     case quit = "q"
@@ -26,7 +25,6 @@ enum OptionType: String {
     init(value: String) {
         switch value {
         case "submit": self = .submit
-        case "p": self = .palindrome
         case "h": self = .help
         case "q": self = .quit
         default: self = .unknown
@@ -51,39 +49,26 @@ class ConsoleIO {
         return (OptionType(value: option), option)
     }
     
-    /* default values for to parameter is "standard". */
     func writeMessage(_ message: String, to: OutputType = .standard) {
         switch to {
         case .standard:
             //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
             print("\u{001B}[;m\(message)")
         case .timesheetTasks:
-            //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
             fputs("\u{001B}[0;33m\(message)\n", stderr)
         case .projects:
-            //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
             fputs("\u{001B}[0;35m\(message)\n", stderr)
         case .projectTasks:
-            //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
             fputs("\u{001B}[0;36m\(message)\n", stderr)
         case .error:
-            //in this case you’ll print error messages in red (\u{001B}[0;31m).
             fputs("\u{001B}[0;31m\(message)\n", stderr)
         }
     }
     
     func getInput() -> String {
-        
-        // 1
         let keyboard = FileHandle.standardInput
-        
-        // 2
         let inputData = keyboard.availableData
-        
-        // 3
         let strData = String(data: inputData, encoding: String.Encoding.utf8)!
-        
-        // 4
         return strData.trimmingCharacters(in: CharacterSet.newlines)
     }
 }
