@@ -13,7 +13,6 @@
 		4BE8C57E1E1177B3009C9C19 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C57D1E1177B3009C9C19 /* main.swift */; };
 		4BE8C5871E11A16F009C9C19 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */; };
 		4BE8C5881E11A16F009C9C19 /* Panagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5851E11A16F009C9C19 /* Panagram.swift */; };
-		4BE8C5891E11A16F009C9C19 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5861E11A16F009C9C19 /* StringExtension.swift */; };
 		4BE8C58B1E11A299009C9C19 /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */; };
 		4BE8C58D1E1456B1009C9C19 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,6 @@
 		4BE8C57D1E1177B3009C9C19 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		4BE8C5851E11A16F009C9C19 /* Panagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panagram.swift; sourceTree = "<group>"; };
-		4BE8C5861E11A16F009C9C19 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenairAPIManager.swift; sourceTree = "<group>"; };
 		4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +85,6 @@
 				4BE8C57D1E1177B3009C9C19 /* main.swift */,
 				4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */,
 				4BE8C5851E11A16F009C9C19 /* Panagram.swift */,
-				4BE8C5861E11A16F009C9C19 /* StringExtension.swift */,
 				4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */,
 				4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */,
 			);
@@ -154,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0638511E8F044A00C6F765 /* ProjectTask.swift in Sources */,
-				4BE8C5891E11A16F009C9C19 /* StringExtension.swift in Sources */,
 				4B1050021E26C50300976F33 /* DayOfWeek.swift in Sources */,
 				4BE8C57E1E1177B3009C9C19 /* main.swift in Sources */,
 				4BE8C5871E11A16F009C9C19 /* ConsoleIO.swift in Sources */,
