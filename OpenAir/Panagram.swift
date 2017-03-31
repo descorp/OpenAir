@@ -168,12 +168,8 @@ class Panagram {
                                 
                                 
                             })
-                            
-                            
-                            
                         }
                     })
-                    
                 })
             case .quit:
                 shouldQuit = true
@@ -212,6 +208,12 @@ class Panagram {
         return weekDaysWorkHours
     }
     
+    func performCommand(description: String, command: () throws -> Void) rethrows {
+        print("👉  \(description)...")
+        try command()
+        print("✅  Done")
+    }
+    
     func addTaskToTimesheet(dateComponent: CalendarDateComponents, weekDaysWorkHours: [Int], timesheetId: String, projectId: String, projectTaskId: String, userId: String, company: String, userName: String, password: String) {
     
         // add tasks to timesheet for 5 working days.
@@ -220,7 +222,20 @@ class Panagram {
                 
                 self.index = self.index + 1
                 
-                guard self.index < 6 else { return }
+                guard self.index < 6 else {
+                
+                    // save and submit timesheet
+                    print("Added 5 days tasks")
+                    self.apiManager.submitTimesheet(company: company, userName: userName, password: password, timesheetId: timesheetId, callback: { (success, result) in
+                        if success {
+                            print("All done! 🎉  Enjoy your weekend! 🚀")
+                        }
+                        else {
+                            print("An error was encountered, Cannot submit timesheet 🙁")
+                        }
+                    })
+                    return
+                }
                 
                 self.consoleIO.writeMessage("Task added to timesheet...")
                 
@@ -233,9 +248,7 @@ class Panagram {
                     let date =  Date.dateFromComponents(dateComponents: currentDateComponents)
                     
                     let date2 = date?.dateComponentsByAddingDays(days: self.index)
-                    print("Adding 1 day to sunday: \(date2)")
                     let newcalendarComponents = date2?.calendarComponents
-                    print("newcalendarComponents \(newcalendarComponents)")
                     
                     if let newcalendarComponents = newcalendarComponents {
                         

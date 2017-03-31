@@ -22,7 +22,8 @@ enum Endpoint {
     case addTimeSheet
     case projects
     case projectTask
-    case timesheetTask  
+    case timesheetTask
+    case submitTimesheet
 }
 
 /** This class mange all XML API requests to OpenAir **/
@@ -123,7 +124,6 @@ class OpenairAPIManager: NSObject {
         tasks = [ProjectTask]()
         
         let requestPayload = "<?xml version='1.0' encoding='UTF-8' standalone='yes'?><request API_ver='1.0' client='test app' client_ver='1.1' namespace='\(nameSpace)' key='\(apiKey)'><Auth><Login><company>\(company)</company><user>\(userName)</user><password>\(password)</password></Login></Auth><Read type='Projecttask' method='equal to' limit='10'><Projecttask><projectid>\(projectId)</projectid></Projecttask></Read></request>"
-        //print("getprojectTasks requestPayload: \(requestPayload)")
         let requestPayloadData = requestPayload.data(using: String.Encoding.utf8, allowLossyConversion: false)
         
         if let requestPayloadData = requestPayloadData {
@@ -132,17 +132,15 @@ class OpenairAPIManager: NSObject {
         consumedEndpoit = .projectTask
     }
     
-    /*
-     func authenticateUser(company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
-     let requestPayload = "<?xml version='1.0' encoding='UTF-8' standalone='yes'?><request API_ver='1.0' client='test app' client_ver='1.1' namespace='\(nameSpace)' key='\(apiKey)'><Auth><Login><company>\(company)</company><user>\(userName)</user><password>\(password)</password></Login></Auth></request>"
-     print("requestPayload: \(requestPayload)")
-     let requestPayloadData = requestPayload.data(using: String.Encoding.utf8, allowLossyConversion: false)
-     
-     if let requestPayloadData = requestPayloadData{
-     sendRequest(path: netSuitServerBaseURL, requestPayload: requestPayloadData, httpMethod: "POST", callback: callback)
-     }
-     }
-     */
+    func submitTimesheet(company: String, userName: String, password: String, timesheetId: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
+        
+        let requestPayload = "<?xml version='1.0' encoding='UTF-8' standalone='yes'?><request API_ver='1.0' client='test app' client_ver='1.1' namespace='\(nameSpace)' key='\(apiKey)'><Auth><Login><company>\(company)</company><user>\(userName)</user><password>\(password)</password></Login></Auth><Submit type='Timesheet'><Timesheet><id>\(timesheetId)</id></Timesheet></Submit></request>"
+        let requestPayloadData = requestPayload.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        if let requestPayloadData = requestPayloadData {
+            sendRequest(path: netSuitServerBaseURL, requestPayload: requestPayloadData, httpMethod: "POST", callback: callback)
+        }
+        consumedEndpoit = .submitTimesheet
+    }
     
     func sendRequest(path: String, requestPayload: Data, httpMethod: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
@@ -351,6 +349,11 @@ extension OpenairAPIManager: XMLParserDelegate {
             if currentElementName == "id" {
                 projectTask = string
 //                print("DEBUG: timesheet task id : \(projectTask)")
+            }
+        case .submitTimesheet:
+            if currentElementName == "id" {
+                xmlParser.abortParsing()
+                self.completionHandler(true, string)
             }
         }
     }
