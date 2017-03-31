@@ -11,6 +11,9 @@ import Foundation
 enum OutputType {
     case error
     case standard
+    case timesheetTasks
+    case projects
+    case projectTasks
 }
 
 enum OptionType: String {
@@ -54,6 +57,15 @@ class ConsoleIO {
         case .standard:
             //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
             print("\u{001B}[;m\(message)")
+        case .timesheetTasks:
+            //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
+            fputs("\u{001B}[0;33m\(message)\n", stderr)
+        case .projects:
+            //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
+            fputs("\u{001B}[0;35m\(message)\n", stderr)
+        case .projectTasks:
+            //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
+            fputs("\u{001B}[0;36m\(message)\n", stderr)
         case .error:
             //in this case you’ll print error messages in red (\u{001B}[0;31m).
             fputs("\u{001B}[0;31m\(message)\n", stderr)
