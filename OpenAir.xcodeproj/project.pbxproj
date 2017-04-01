@@ -12,7 +12,7 @@
 		4B7580D41E1869A00082AE09 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7580D31E1869A00082AE09 /* Project.swift */; };
 		4BE8C57E1E1177B3009C9C19 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C57D1E1177B3009C9C19 /* main.swift */; };
 		4BE8C5871E11A16F009C9C19 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */; };
-		4BE8C5881E11A16F009C9C19 /* Panagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5851E11A16F009C9C19 /* Panagram.swift */; };
+		4BE8C5881E11A16F009C9C19 /* Openair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5851E11A16F009C9C19 /* Openair.swift */; };
 		4BE8C58B1E11A299009C9C19 /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */; };
 		4BE8C58D1E1456B1009C9C19 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		4BE8C57A1E1177B3009C9C19 /* OpenAir */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenAir; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE8C57D1E1177B3009C9C19 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
-		4BE8C5851E11A16F009C9C19 /* Panagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panagram.swift; sourceTree = "<group>"; };
+		4BE8C5851E11A16F009C9C19 /* Openair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Openair.swift; sourceTree = "<group>"; };
 		4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenairAPIManager.swift; sourceTree = "<group>"; };
 		4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +84,7 @@
 				4B7580D21E18696C0082AE09 /* Model */,
 				4BE8C57D1E1177B3009C9C19 /* main.swift */,
 				4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */,
-				4BE8C5851E11A16F009C9C19 /* Panagram.swift */,
+				4BE8C5851E11A16F009C9C19 /* Openair.swift */,
 				4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */,
 				4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */,
 			);
@@ -155,7 +155,7 @@
 				4BE8C57E1E1177B3009C9C19 /* main.swift in Sources */,
 				4BE8C5871E11A16F009C9C19 /* ConsoleIO.swift in Sources */,
 				4BE8C58D1E1456B1009C9C19 /* Date+Utilities.swift in Sources */,
-				4BE8C5881E11A16F009C9C19 /* Panagram.swift in Sources */,
+				4BE8C5881E11A16F009C9C19 /* Openair.swift in Sources */,
 				4B7580D41E1869A00082AE09 /* Project.swift in Sources */,
 				4BE8C58B1E11A299009C9C19 /* OpenairAPIManager.swift in Sources */,
 			);

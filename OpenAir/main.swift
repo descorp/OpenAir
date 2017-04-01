@@ -8,7 +8,7 @@
 
 import Foundation
 
-let panagram = Panagram()
+let openair = Openair()
 if CommandLine.argc < 2 {
-    panagram.interactiveMode()
+    openair.interactiveMode()
 }
