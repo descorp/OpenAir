@@ -1,12 +1,17 @@
 //
 //  ConsoleIO.swift
-//  Panagram
+//  Openair
 //
 //  Created by Sameh Mabrouk on 24/12/16.
 //  Copyright © 2016 Sameh Mabrouk. All rights reserved.
 //
 
 import Foundation
+
+enum InputType {
+    case text
+    case password
+}
 
 enum OutputType {
     case error
@@ -65,10 +70,16 @@ class ConsoleIO {
         }
     }
     
-    func getInput() -> String {
-        let keyboard = FileHandle.standardInput
-        let inputData = keyboard.availableData
-        let strData = String(data: inputData, encoding: String.Encoding.utf8)!
-        return strData.trimmingCharacters(in: CharacterSet.newlines)
+    func getInput(inputType: InputType = .text) -> String {
+        if inputType == .text {
+            let keyboard = FileHandle.standardInput
+            let inputData = keyboard.availableData
+            let strData = String(data: inputData, encoding: String.Encoding.utf8)!
+            return strData.trimmingCharacters(in: CharacterSet.newlines)
+        }
+        else {
+           let newStr = String.init(cString: (UnsafePointer<CChar>(getpass("🔑  Type your password: "))))
+            return newStr
+        }
     }
 }
