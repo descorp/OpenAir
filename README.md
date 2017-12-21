@@ -9,3 +9,9 @@ This is a Swift terminal program that enables you to submit your OpenAir timeshe
     <br />
   </a>
 </h3>
+
+ <h3 align="center">
+    <img src="./OpenAirDemo.gif"/>
+    <br />
+  </a>
+</h3>
