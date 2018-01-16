@@ -1,0 +1,6 @@
+framework module Pods_OpenAirSwift_Tests {
+  umbrella header "Pods-OpenAirSwift_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
