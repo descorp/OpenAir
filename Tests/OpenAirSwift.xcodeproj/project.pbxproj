@@ -36,17 +36,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40BF2A1C200F899B00DE2191 /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Examples;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				40BF2A1C200F899B00DE2191 /* Examples */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
