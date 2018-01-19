@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Project {
-    var picklist_label: String!
-    var id: String!
+public struct Project {
+    public var picklist_label: String!
+    public var id: String!
     
-    init(id: String, picklist_label: String) {
+    public init(id: String, picklist_label: String) {
         self.id = id
         self.picklist_label = picklist_label
     }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class ProjectTask {
-    var name: String!
-    var id: String!
+public struct ProjectTask {
+    public var name: String!
+    public var id: String!
     
-    init(id: String, name: String) {
+    public init(id: String, name: String) {
         self.id = id
         self.name = name
     }

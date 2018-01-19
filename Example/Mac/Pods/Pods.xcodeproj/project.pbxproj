@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25381F657F9F479328787E190FF75EAD /* OpenAirSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6FAF75C1DE719D9F530D58E35CEBAD3 /* OpenAirSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47D8DD9794F27B15ED6D2917B7B63511 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+		4C7C0BAAA977B12FC64202C747ECB656 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+		50251B82A1A7B8827139ADE1831038C1 /* OpenAirSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E5F3B02EB2C6E24C1778EBE09EF084 /* OpenAirSwift-dummy.m */; };
+		74BA0C72F13E6B14A530DA9ACBD810CC /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A6478678E599E8296940D1AE96C10 /* ProjectTask.swift */; };
+		9B2438DFA903C2F5A4892F2F8612868E /* Pods-OpenAir-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CE50B1E71A0958010DACC593F27067 /* Pods-OpenAir-dummy.m */; };
+		A7AC4154412BAD67AAC26E9CA7CD8637 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BFEA5C5179433D17B152D4A309C12 /* DayOfWeek.swift */; };
+		AECCFD649786356E373B4300219225BE /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688F577C0A72030AB926977F911DFE5 /* OpenairAPIManager.swift */; };
+		B86A6DF39ED7635F95DF258F4E0C66C6 /* Pods-OpenAir-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B9AF6C99BFB9EF2998EAB62162438C /* Pods-OpenAir-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5AA5C76592412A91CC53CB926367413 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E968AFFE73793A384D028E4F7D0AB /* Date+Utilities.swift */; };
+		F806B8591030F5573CF77D34F7F384A2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F542ED79E11A3A2FE3C6250F3AE89F5 /* Project.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		703042769136C1447E14CA8C1A2F9077 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F443CF3DFD56EDE3A6F1E7F1D918E38;
+			remoteInfo = OpenAirSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		078B6646CB134F3DC0E677E447E0A7E7 /* Pods-OpenAir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OpenAir.release.xcconfig"; sourceTree = "<group>"; };
+		07D87BE53561B8ACADB91074A154A103 /* Pods-OpenAir-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OpenAir-acknowledgements.markdown"; sourceTree = "<group>"; };
+		270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		31E5EFFBFCD1A17174D3FBF0454DF33F /* Pods-OpenAir-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OpenAir-acknowledgements.plist"; sourceTree = "<group>"; };
+		3A21265A7E6E09E44BDE665164F73A7B /* Pods_OpenAir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OpenAir.framework; path = "Pods-OpenAir.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44CE50B1E71A0958010DACC593F27067 /* Pods-OpenAir-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OpenAir-dummy.m"; sourceTree = "<group>"; };
+		5DE28ECA87C0DF6B1CDC64392DB36153 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		689E51213526F42A120F3B4C561A9660 /* Pods-OpenAir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OpenAir.debug.xcconfig"; sourceTree = "<group>"; };
+		6E544E8ADB72B70356CEC15BA9B97E60 /* OpenAirSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OpenAirSwift.framework; path = OpenAirSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0040E4CAACD083AD910D42285A8EF6 /* Pods-OpenAir-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OpenAir-resources.sh"; sourceTree = "<group>"; };
+		8D3FA530D3F414C784BF7A32758C87A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F542ED79E11A3A2FE3C6250F3AE89F5 /* Project.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		9F9A6478678E599E8296940D1AE96C10 /* ProjectTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
+		A5D0012739D54D895DDC50D8454F8C49 /* Pods-OpenAir.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OpenAir.modulemap"; sourceTree = "<group>"; };
+		A6B9AF6C99BFB9EF2998EAB62162438C /* Pods-OpenAir-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OpenAir-umbrella.h"; sourceTree = "<group>"; };
+		B1E5F3B02EB2C6E24C1778EBE09EF084 /* OpenAirSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OpenAirSwift-dummy.m"; sourceTree = "<group>"; };
+		B7974DC88113A127ADF32664D055A77A /* OpenAirSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenAirSwift.xcconfig; sourceTree = "<group>"; };
+		B7E39D4CB5F1459465BF72E7E8E3CAA7 /* OpenAirSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAirSwift-prefix.pch"; sourceTree = "<group>"; };
+		DC8E968AFFE73793A384D028E4F7D0AB /* Date+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Utilities.swift"; path = "OpenAirSwift/Classes/Date+Utilities.swift"; sourceTree = "<group>"; };
+		DF062F81942CA9F7E9C524E6FADB9EC9 /* OpenAirSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OpenAirSwift.modulemap; sourceTree = "<group>"; };
+		E688F577C0A72030AB926977F911DFE5 /* OpenairAPIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenairAPIManager.swift; path = OpenAirSwift/Classes/OpenairAPIManager.swift; sourceTree = "<group>"; };
+		E6FAF75C1DE719D9F530D58E35CEBAD3 /* OpenAirSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAirSwift-umbrella.h"; sourceTree = "<group>"; };
+		EB5BFEA5C5179433D17B152D4A309C12 /* DayOfWeek.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		FED0456F7CAFB4BE240F3B455585D3AC /* Pods-OpenAir-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OpenAir-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48F894BEF9276CA986533A06C7534B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D8DD9794F27B15ED6D2917B7B63511 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C57C5D03EA5AE2B62FD486DADCAB4D32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7C0BAAA977B12FC64202C747ECB656 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04C068A18C5413F804A2959126093416 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		0DA4B59A5C0C3A407C2AF952218127CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E544E8ADB72B70356CEC15BA9B97E60 /* OpenAirSwift.framework */,
+				3A21265A7E6E09E44BDE665164F73A7B /* Pods_OpenAir.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04C068A18C5413F804A2959126093416 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F96F25D0E789AFCB7B051D23D20CAEF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D3FA530D3F414C784BF7A32758C87A1 /* Info.plist */,
+				DF062F81942CA9F7E9C524E6FADB9EC9 /* OpenAirSwift.modulemap */,
+				B7974DC88113A127ADF32664D055A77A /* OpenAirSwift.xcconfig */,
+				B1E5F3B02EB2C6E24C1778EBE09EF084 /* OpenAirSwift-dummy.m */,
+				B7E39D4CB5F1459465BF72E7E8E3CAA7 /* OpenAirSwift-prefix.pch */,
+				E6FAF75C1DE719D9F530D58E35CEBAD3 /* OpenAirSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Mac/Pods/Target Support Files/OpenAirSwift";
+			sourceTree = "<group>";
+		};
+		61B54A6D982B58912E50A1AD6D62406C /* OpenAirSwift */ = {
+			isa = PBXGroup;
+			children = (
+				DC8E968AFFE73793A384D028E4F7D0AB /* Date+Utilities.swift */,
+				E688F577C0A72030AB926977F911DFE5 /* OpenairAPIManager.swift */,
+				99DCEA576EF17D07F4361A9FA0233C31 /* Model */,
+				4F96F25D0E789AFCB7B051D23D20CAEF /* Support Files */,
+			);
+			name = OpenAirSwift;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		7CF37BD8A0062D7E06DFAB837E48090F /* Pods-OpenAir */ = {
+			isa = PBXGroup;
+			children = (
+				5DE28ECA87C0DF6B1CDC64392DB36153 /* Info.plist */,
+				A5D0012739D54D895DDC50D8454F8C49 /* Pods-OpenAir.modulemap */,
+				07D87BE53561B8ACADB91074A154A103 /* Pods-OpenAir-acknowledgements.markdown */,
+				31E5EFFBFCD1A17174D3FBF0454DF33F /* Pods-OpenAir-acknowledgements.plist */,
+				44CE50B1E71A0958010DACC593F27067 /* Pods-OpenAir-dummy.m */,
+				FED0456F7CAFB4BE240F3B455585D3AC /* Pods-OpenAir-frameworks.sh */,
+				8D0040E4CAACD083AD910D42285A8EF6 /* Pods-OpenAir-resources.sh */,
+				A6B9AF6C99BFB9EF2998EAB62162438C /* Pods-OpenAir-umbrella.h */,
+				689E51213526F42A120F3B4C561A9660 /* Pods-OpenAir.debug.xcconfig */,
+				078B6646CB134F3DC0E677E447E0A7E7 /* Pods-OpenAir.release.xcconfig */,
+			);
+			name = "Pods-OpenAir";
+			path = "Target Support Files/Pods-OpenAir";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				84E0F4FE1640F3002B55F12FD93C29DC /* Development Pods */,
+				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				0DA4B59A5C0C3A407C2AF952218127CA /* Products */,
+				B46C289F438F51D715B6479DAC1D3075 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		84E0F4FE1640F3002B55F12FD93C29DC /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61B54A6D982B58912E50A1AD6D62406C /* OpenAirSwift */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		99DCEA576EF17D07F4361A9FA0233C31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BFEA5C5179433D17B152D4A309C12 /* DayOfWeek.swift */,
+				9F542ED79E11A3A2FE3C6250F3AE89F5 /* Project.swift */,
+				9F9A6478678E599E8296940D1AE96C10 /* ProjectTask.swift */,
+			);
+			name = Model;
+			path = OpenAirSwift/Classes/Model;
+			sourceTree = "<group>";
+		};
+		B46C289F438F51D715B6479DAC1D3075 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CF37BD8A0062D7E06DFAB837E48090F /* Pods-OpenAir */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		15CDFB910899BB765122FA2D42A75F45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B86A6DF39ED7635F95DF258F4E0C66C6 /* Pods-OpenAir-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ABF4E380D7AABBEA2DE24B3A518715A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25381F657F9F479328787E190FF75EAD /* OpenAirSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2F443CF3DFD56EDE3A6F1E7F1D918E38 /* OpenAirSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0BE0AF505B0CE827F8F995966F5CB31 /* Build configuration list for PBXNativeTarget "OpenAirSwift" */;
+			buildPhases = (
+				77AD48D1E442AA54DBA93A17042E8B49 /* Sources */,
+				48F894BEF9276CA986533A06C7534B04 /* Frameworks */,
+				4ABF4E380D7AABBEA2DE24B3A518715A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenAirSwift;
+			productName = OpenAirSwift;
+			productReference = 6E544E8ADB72B70356CEC15BA9B97E60 /* OpenAirSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E2027DC2D87E1B440E683B09CB959577 /* Pods-OpenAir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8780AC96AC3EDCAFED23DB473E4D273 /* Build configuration list for PBXNativeTarget "Pods-OpenAir" */;
+			buildPhases = (
+				E4FFFE1D44C887D706A4BDB962DBE9D1 /* Sources */,
+				C57C5D03EA5AE2B62FD486DADCAB4D32 /* Frameworks */,
+				15CDFB910899BB765122FA2D42A75F45 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69020ACFD0999F155C071CAA727A3BAE /* PBXTargetDependency */,
+			);
+			name = "Pods-OpenAir";
+			productName = "Pods-OpenAir";
+			productReference = 3A21265A7E6E09E44BDE665164F73A7B /* Pods_OpenAir.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0DA4B59A5C0C3A407C2AF952218127CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F443CF3DFD56EDE3A6F1E7F1D918E38 /* OpenAirSwift */,
+				E2027DC2D87E1B440E683B09CB959577 /* Pods-OpenAir */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77AD48D1E442AA54DBA93A17042E8B49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AA5C76592412A91CC53CB926367413 /* Date+Utilities.swift in Sources */,
+				A7AC4154412BAD67AAC26E9CA7CD8637 /* DayOfWeek.swift in Sources */,
+				AECCFD649786356E373B4300219225BE /* OpenairAPIManager.swift in Sources */,
+				50251B82A1A7B8827139ADE1831038C1 /* OpenAirSwift-dummy.m in Sources */,
+				F806B8591030F5573CF77D34F7F384A2 /* Project.swift in Sources */,
+				74BA0C72F13E6B14A530DA9ACBD810CC /* ProjectTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4FFFE1D44C887D706A4BDB962DBE9D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2438DFA903C2F5A4892F2F8612868E /* Pods-OpenAir-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69020ACFD0999F155C071CAA727A3BAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenAirSwift;
+			target = 2F443CF3DFD56EDE3A6F1E7F1D918E38 /* OpenAirSwift */;
+			targetProxy = 703042769136C1447E14CA8C1A2F9077 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0219BE774B2EA1D2200C060A377E0600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7974DC88113A127ADF32664D055A77A /* OpenAirSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/OpenAirSwift/OpenAirSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OpenAirSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/OpenAirSwift/OpenAirSwift.modulemap";
+				PRODUCT_NAME = OpenAirSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C9991A549AC7278F29A604D954513FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7974DC88113A127ADF32664D055A77A /* OpenAirSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/OpenAirSwift/OpenAirSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OpenAirSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/OpenAirSwift/OpenAirSwift.modulemap";
+				PRODUCT_NAME = OpenAirSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3918C3731F97F7B1A6B91CA53EA9B086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6560A4AFF004D1420AB4047ED7B3E45A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8074E13998F5BCDBF5DC39C841A4727E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689E51213526F42A120F3B4C561A9660 /* Pods-OpenAir.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-OpenAir/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-OpenAir/Pods-OpenAir.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_OpenAir;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E7C2357EECBF69C5C564F646CCC0F2DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078B6646CB134F3DC0E677E447E0A7E7 /* Pods-OpenAir.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-OpenAir/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-OpenAir/Pods-OpenAir.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_OpenAir;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3918C3731F97F7B1A6B91CA53EA9B086 /* Debug */,
+				6560A4AFF004D1420AB4047ED7B3E45A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8780AC96AC3EDCAFED23DB473E4D273 /* Build configuration list for PBXNativeTarget "Pods-OpenAir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8074E13998F5BCDBF5DC39C841A4727E /* Debug */,
+				E7C2357EECBF69C5C564F646CCC0F2DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0BE0AF505B0CE827F8F995966F5CB31 /* Build configuration list for PBXNativeTarget "OpenAirSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0219BE774B2EA1D2200C060A377E0600 /* Debug */,
+				2C9991A549AC7278F29A604D954513FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
