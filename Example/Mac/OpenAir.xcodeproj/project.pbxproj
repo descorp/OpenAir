@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B0638511E8F044A00C6F765 /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0638501E8F044A00C6F765 /* ProjectTask.swift */; };
-		4B1050021E26C50300976F33 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1050011E26C50300976F33 /* DayOfWeek.swift */; };
-		4B7580D41E1869A00082AE09 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7580D31E1869A00082AE09 /* Project.swift */; };
 		4BE8C57E1E1177B3009C9C19 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C57D1E1177B3009C9C19 /* main.swift */; };
 		4BE8C5871E11A16F009C9C19 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */; };
 		4BE8C5881E11A16F009C9C19 /* Openair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C5851E11A16F009C9C19 /* Openair.swift */; };
-		4BE8C58B1E11A299009C9C19 /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */; };
-		4BE8C58D1E1456B1009C9C19 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */; };
+		E1993C57449F41970B14343D /* Pods_OpenAir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C1EC1E3E19BFA5942107FF /* Pods_OpenAir.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,15 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B0638501E8F044A00C6F765 /* ProjectTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
-		4B1050011E26C50300976F33 /* DayOfWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
-		4B7580D31E1869A00082AE09 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		4BE8C57A1E1177B3009C9C19 /* OpenAir */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenAir; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE8C57D1E1177B3009C9C19 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		4BE8C5851E11A16F009C9C19 /* Openair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Openair.swift; sourceTree = "<group>"; };
-		4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenairAPIManager.swift; sourceTree = "<group>"; };
-		4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
+		79C1EC1E3E19BFA5942107FF /* Pods_OpenAir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenAir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D121DC22BB81FCAE825779 /* Pods-OpenAir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAir.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAir/Pods-OpenAir.release.xcconfig"; sourceTree = "<group>"; };
+		D4DFBDBB10353FF66509BBB9 /* Pods-OpenAir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAir.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAir/Pods-OpenAir.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,27 +40,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1993C57449F41970B14343D /* Pods_OpenAir.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B7580D21E18696C0082AE09 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4B7580D31E1869A00082AE09 /* Project.swift */,
-				4B1050011E26C50300976F33 /* DayOfWeek.swift */,
-				4B0638501E8F044A00C6F765 /* ProjectTask.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		4BE8C5711E1177B3009C9C19 = {
 			isa = PBXGroup;
 			children = (
 				4BE8C57C1E1177B3009C9C19 /* OpenAir */,
 				4BE8C57B1E1177B3009C9C19 /* Products */,
+				D8F08CE792C642EE3FF39CD1 /* Pods */,
+				D207A7F74340A7F6CAF31BC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +68,28 @@
 		4BE8C57C1E1177B3009C9C19 /* OpenAir */ = {
 			isa = PBXGroup;
 			children = (
-				4B7580D21E18696C0082AE09 /* Model */,
 				4BE8C57D1E1177B3009C9C19 /* main.swift */,
 				4BE8C5841E11A16F009C9C19 /* ConsoleIO.swift */,
 				4BE8C5851E11A16F009C9C19 /* Openair.swift */,
-				4BE8C58A1E11A299009C9C19 /* OpenairAPIManager.swift */,
-				4BE8C58C1E1456B1009C9C19 /* Date+Utilities.swift */,
 			);
 			path = OpenAir;
+			sourceTree = "<group>";
+		};
+		D207A7F74340A7F6CAF31BC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79C1EC1E3E19BFA5942107FF /* Pods_OpenAir.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8F08CE792C642EE3FF39CD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4DFBDBB10353FF66509BBB9 /* Pods-OpenAir.debug.xcconfig */,
+				B9D121DC22BB81FCAE825779 /* Pods-OpenAir.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BE8C5811E1177B3009C9C19 /* Build configuration list for PBXNativeTarget "OpenAir" */;
 			buildPhases = (
+				95D108D85AABF5FF2737AACB /* [CP] Check Pods Manifest.lock */,
 				4BE8C5761E1177B3009C9C19 /* Sources */,
 				4BE8C5771E1177B3009C9C19 /* Frameworks */,
 				4BE8C5781E1177B3009C9C19 /* CopyFiles */,
+				52BAF3317C07B00AD02F5A09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,7 +126,7 @@
 				TargetAttributes = {
 					4BE8C5791E1177B3009C9C19 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = YA37BS2VP8;
+						DevelopmentTeam = R596F9CQZ5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,19 +148,50 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52BAF3317C07B00AD02F5A09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenAir/Pods-OpenAir-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95D108D85AABF5FF2737AACB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenAir-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BE8C5761E1177B3009C9C19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0638511E8F044A00C6F765 /* ProjectTask.swift in Sources */,
-				4B1050021E26C50300976F33 /* DayOfWeek.swift in Sources */,
 				4BE8C57E1E1177B3009C9C19 /* main.swift in Sources */,
 				4BE8C5871E11A16F009C9C19 /* ConsoleIO.swift in Sources */,
-				4BE8C58D1E1456B1009C9C19 /* Date+Utilities.swift in Sources */,
 				4BE8C5881E11A16F009C9C19 /* Openair.swift in Sources */,
-				4B7580D41E1869A00082AE09 /* Project.swift in Sources */,
-				4BE8C58B1E11A299009C9C19 /* OpenairAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,19 +288,23 @@
 		};
 		4BE8C5821E1177B3009C9C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4DFBDBB10353FF66509BBB9 /* Pods-OpenAir.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = YA37BS2VP8;
+				DEVELOPMENT_TEAM = R596F9CQZ5;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		4BE8C5831E1177B3009C9C19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D121DC22BB81FCAE825779 /* Pods-OpenAir.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = YA37BS2VP8;
+				DEVELOPMENT_TEAM = R596F9CQZ5;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

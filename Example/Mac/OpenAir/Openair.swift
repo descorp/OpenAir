@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import OpenAirSwift
 
 class Openair {
-    let consoleIO = ConsoleIO()
     
-    let apiManager = OpenairAPIManager()
+    // XML API constants
+    private static let namespace     = "default"
+    private static let apiKey        = "MSC2kxYUFYkm7rJ8z50z"
+    
+    let consoleIO = ConsoleIO()
+    let apiManager = OpenairAPIManager(for: namespace, with: apiKey)
     var calendarComponents: CalendarDateComponents? = nil
     var endDateCalendarComponents: CalendarDateComponents? = nil
     var index = 1

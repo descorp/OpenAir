@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40BF2A1B200F827900DE2191 /* OpenAirSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7DB3C6C047A451669EEDE88E /* Pods_OpenAirSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CC1B220650FEA20198379F /* Pods_OpenAirSwift_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E6E4585B6A8421F3098754A /* OpenAirSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = OpenAirSwift.podspec; path = ../OpenAirSwift.podspec; sourceTree = "<group>"; };
-		4C64D960EB962C709A2AEFBB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenAirSwift.podspec; sourceTree = "<group>"; };
+		4C64D960EB962C709A2AEFBB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* OpenAirSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenAirSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6BA9C11E9E0DDBFF93705D0C /* Pods-OpenAirSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAirSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAirSwift_Tests/Pods-OpenAirSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		74CC1B220650FEA20198379F /* Pods_OpenAirSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenAirSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC387CAC0114EAE86E11C678 /* Pods-OpenAirSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAirSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAirSwift_Tests/Pods-OpenAirSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DFA209B9EBB1E7C553C1AC35 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DFA209B9EBB1E7C553C1AC35 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,9 +36,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40BF2A1C200F899B00DE2191 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				40BF2A1C200F899B00DE2191 /* Examples */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -74,11 +83,12 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				2E6E4585B6A8421F3098754A /* OpenAirSwift.podspec */,
+				40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */,
 				DFA209B9EBB1E7C553C1AC35 /* README.md */,
 				4C64D960EB962C709A2AEFBB /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		87300C1AE824F67A3F6D5185 /* Frameworks */ = {
@@ -131,10 +141,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
@@ -165,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BF2A1B200F827900DE2191 /* OpenAirSwift.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
