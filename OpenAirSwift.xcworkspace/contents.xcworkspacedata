@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:OpenAirSwift.xcodeproj">
+      location = "group:Tests/OpenAirSwift.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:Tests/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
