@@ -21,7 +21,7 @@ enum Endpoint {
     case submitTimesheet
 }
 
-/** This class mange all XML API requests to OpenAir **/
+/** This class manage all XML API requests to OpenAir **/
 public class OpenairAPIManager: NSObject {
 
     // MARK: private variables
@@ -31,7 +31,7 @@ public class OpenairAPIManager: NSObject {
     private var session = URLSession.shared
 
     // XML API constants
-    let netSuitServerBaseURL = "https://www.openair.com/api.pl"
+    let netSuitServerBaseURL: String
     let nameSpace: String
     let apiKey: String
 
@@ -49,9 +49,24 @@ public class OpenairAPIManager: NSObject {
     var currentElementName: String = ""
     var xmlParser: XMLParser! = nil
 
-    public init(for nameSpace: String, with apiKey: String, by address: String = "https://www.openair.com/api.pl") {
+    /**
+     
+     Initiate new instance of manager to access OpenAir API
+     
+     The namespace and APIkey parameters are used to verify that
+     the request is coming from a valid partner that has permission to use OpenAir API
+     
+        - Parameters:
+            - apiKey: secret APIKey of your organisation.
+            - nameSpace: namespace of your organisation. By default value is *default*
+            - address: Url of your OpenAir server. By default OpenAir XML API address
+     
+        - Note: Contact the OpenAir Support Department or your account representative to request API access.
+     **/
+    public init(withKey apiKey: String, forNamerspace nameSpace: String = "default", byUrl address: String = "https://www.openair.com/api.pl") {
       self.nameSpace = nameSpace
       self.apiKey = apiKey
+      self.netSuitServerBaseURL = address
     }
 
     public func authenticateUser(company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
