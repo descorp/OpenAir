@@ -1,33 +1,26 @@
 language: objective-c
 osx_image: xcode9.2
-xcode_project:
-xcode_scheme: OpenAirSwift
-xcode_sdk: iphonesimulator11.2
 
 env:
   global:
-  - LC_CTYPE=en_US.UTF-8
-  - LANG=en_US.UTF-8
-  - IOS_FRAMEWORK_SCHEME="OpenAirSwift"
-  - OSX_FRAMEWORK_SCHEME="OpenAirSwiftMac"
-  - PROJECT="OpenAirSwift.xcodeproj"
+  - IOS_FRAMEWORK_SCHEME="OpenAirSwift_iOS"
+  - OSX_FRAMEWORK_SCHEME="OpenAirSwift_Mac"
+  - WORKSPACE="OpenAirSwift.xcworkspace"
   matrix:
-  - DESTINATION="OS=11.1,name=iPhone 6"            SCHEME="$IOS_FRAMEWORK_SCHEME"       ACTION="test"
-  - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"       ACTION="build"
+  - DESTINATION="OS=11.1,name=iPhone 6"   SCHEME="$IOS_FRAMEWORK_SCHEME"     ACTION="build test"
+  - DESTINATION="arch=x86_64"             SCHEME="$OSX_FRAMEWORK_SCHEME"     ACTION="build test"
 
 before_install:
   - brew update
   - brew outdated xctool || brew upgrade xctool
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
   - pip install --user codecov
-  - xcodebuild -version
-  - xcodebuild -showsdks
-  - gem install cocoapods
+  - pod install --project-directory=Tests
 
 script:
   - set -o pipefail
-  - pod install
-  - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" clear $ACTION | xcpretty
+  - xcodebuild -scheme "$SCHEME" -workspace "$WORKSPACE" -destination "$DESTINATION" clean $ACTION | xcpretty
 
 after_success:
   - pod lib lint
