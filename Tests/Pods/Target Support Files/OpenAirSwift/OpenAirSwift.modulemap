@@ -1,6 +1,0 @@
-framework module OpenAirSwift {
-  umbrella header "OpenAirSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}
