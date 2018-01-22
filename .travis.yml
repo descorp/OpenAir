@@ -22,9 +22,11 @@ before_install:
   - pip install --user codecov
   - xcodebuild -version
   - xcodebuild -showsdks
+  - gem install cocoapods
 
 script:
   - set -o pipefail
+  - pod install
   - xcodebuild -scheme "$SCHEME" -project "$PROJECT" -destination "$DESTINATION" clear $ACTION | xcpretty
 
 after_success:
