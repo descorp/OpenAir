@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "793AA99700B1ADDBD55A4C5A40D3DA3F"
-               BuildableName = "Pods_OpenAirSwift_Tests.framework"
-               BlueprintName = "Pods-OpenAirSwift_Tests"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "40F829CC20161E7A00840651"
+               BuildableName = "OpenAirSwift_Mac.framework"
+               BlueprintName = "OpenAirSwift_Mac"
+               ReferencedContainer = "container:OpenAirSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "40F829D420161E7B00840651"
+               BuildableName = "OpenAirSwift_MacTests.xctest"
+               BlueprintName = "OpenAirSwift_MacTests"
+               ReferencedContainer = "container:OpenAirSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "40F829CC20161E7A00840651"
+            BuildableName = "OpenAirSwift_Mac.framework"
+            BlueprintName = "OpenAirSwift_Mac"
+            ReferencedContainer = "container:OpenAirSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -47,10 +66,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "793AA99700B1ADDBD55A4C5A40D3DA3F"
-            BuildableName = "Pods_OpenAirSwift_Tests.framework"
-            BlueprintName = "Pods-OpenAirSwift_Tests"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "40F829CC20161E7A00840651"
+            BuildableName = "OpenAirSwift_Mac.framework"
+            BlueprintName = "OpenAirSwift_Mac"
+            ReferencedContainer = "container:OpenAirSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -62,6 +81,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "40F829CC20161E7A00840651"
+            BuildableName = "OpenAirSwift_Mac.framework"
+            BlueprintName = "OpenAirSwift_Mac"
+            ReferencedContainer = "container:OpenAirSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

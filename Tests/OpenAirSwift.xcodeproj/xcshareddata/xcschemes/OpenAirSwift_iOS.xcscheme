@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "OpenAirSwift_Example.app"
-               BlueprintName = "OpenAirSwift_Example"
-               ReferencedContainer = "container:OpenAirSwift.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "OpenAirSwift_Tests.xctest"
-               BlueprintName = "OpenAirSwift_Tests"
+               BlueprintIdentifier = "40F829B020161E6100840651"
+               BuildableName = "OpenAirSwift_iOS.framework"
+               BlueprintName = "OpenAirSwift_iOS"
                ReferencedContainer = "container:OpenAirSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "OpenAirSwift_Tests.xctest"
-               BlueprintName = "OpenAirSwift_Tests"
+               BlueprintIdentifier = "40F829B820161E6200840651"
+               BuildableName = "OpenAirSwift_iOSTests.xctest"
+               BlueprintName = "OpenAirSwift_iOSTests"
                ReferencedContainer = "container:OpenAirSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OpenAirSwift_Example.app"
-            BlueprintName = "OpenAirSwift_Example"
+            BlueprintIdentifier = "40F829B020161E6100840651"
+            BuildableName = "OpenAirSwift_iOS.framework"
+            BlueprintName = "OpenAirSwift_iOS"
             ReferencedContainer = "container:OpenAirSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,16 +63,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OpenAirSwift_Example.app"
-            BlueprintName = "OpenAirSwift_Example"
+            BlueprintIdentifier = "40F829B020161E6100840651"
+            BuildableName = "OpenAirSwift_iOS.framework"
+            BlueprintName = "OpenAirSwift_iOS"
             ReferencedContainer = "container:OpenAirSwift.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -96,16 +81,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "OpenAirSwift_Example.app"
-            BlueprintName = "OpenAirSwift_Example"
+            BlueprintIdentifier = "40F829B020161E6100840651"
+            BuildableName = "OpenAirSwift_iOS.framework"
+            BlueprintName = "OpenAirSwift_iOS"
             ReferencedContainer = "container:OpenAirSwift.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

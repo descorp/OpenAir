@@ -1,7 +1,13 @@
 use_frameworks!
-target 'OpenAirSwift_Tests' do
-  pod 'OpenAirSwift', :path => '../../'
 
-  pod 'Quick', '~> 1.2.0'
+pod 'OpenAirSwift', :path => '../'
+
+target 'OpenAirSwift_iOSTests' do
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0.2'
+end
+
+target 'OpenAirSwift_MacTests' do
+    pod 'Quick', '~> 1.2.0'
     pod 'Nimble', '~> 7.0.2'
 end
