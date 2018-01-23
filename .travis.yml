@@ -7,7 +7,7 @@ env:
   - OSX_FRAMEWORK_SCHEME="OpenAirSwift_Mac"
   - WORKSPACE="OpenAirSwift.xcworkspace"
   matrix:
-  - DESTINATION="OS=11.1,name=iPhone 6"   SCHEME="$IOS_FRAMEWORK_SCHEME"     ACTION="build test"
+  - DESTINATION="OS=11.2,name=iPhone 6"   SCHEME="$IOS_FRAMEWORK_SCHEME"     ACTION="build test"
   - DESTINATION="arch=x86_64"             SCHEME="$OSX_FRAMEWORK_SCHEME"     ACTION="build test"
 
 before_install:
