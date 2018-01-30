@@ -50,6 +50,8 @@
 		40C088E9202069E7007B3935 /* TimesheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E7202069E7007B3935 /* TimesheetTests.swift */; };
 		40C088EC20206A68007B3935 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088EB20206A68007B3935 /* DateExtensionsTests.swift */; };
 		40C088ED20206A68007B3935 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088EB20206A68007B3935 /* DateExtensionsTests.swift */; };
+		40C088EE2020975C007B3935 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E320D201F1C8200C52350 /* StringExtensions.swift */; };
+		40C088EF20209761007B3935 /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */; };
 		40F829BA20161E6200840651 /* OpenAirSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F829B120161E6100840651 /* OpenAirSwift_iOS.framework */; };
 		40F829D620161E7B00840651 /* OpenAirSwift_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F829CD20161E7A00840651 /* OpenAirSwift_Mac.framework */; };
 		40F829E4201625FE00840651 /* RequestBuilderCanAddTaskToTimesheetsTestsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* RequestBuilderCanAddTaskToTimesheetsTestsSpec.swift */; };
@@ -655,9 +657,11 @@
 				400E3201201A23CF00C52350 /* CommandInterface.swift in Sources */,
 				400E3208201A245800C52350 /* CommandImplementation.swift in Sources */,
 				400E31DE2018B41800C52350 /* OpenAirDTO.swift in Sources */,
+				40C088EE2020975C007B3935 /* StringExtensions.swift in Sources */,
 				40F829E92016260700840651 /* OpenairAPIManager.swift in Sources */,
 				40F829ED2016260E00840651 /* Project.swift in Sources */,
 				40F829EF2016261100840651 /* ProjectTask.swift in Sources */,
+				40C088EF20209761007B3935 /* TimeIntervalExtensions.swift in Sources */,
 				400E31EB2019D90100C52350 /* RequestConfiguration.swift in Sources */,
 				400E3205201A23EC00C52350 /* Task.swift in Sources */,
 				400E320B201AA06200C52350 /* OpenAirDTO+Utillities.swift in Sources */,
