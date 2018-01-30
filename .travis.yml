@@ -1,0 +1,27 @@
+language: objective-c
+osx_image: xcode9.2
+
+env:
+  global:
+  - IOS_FRAMEWORK_SCHEME="OpenAirSwift_iOS"
+  - OSX_FRAMEWORK_SCHEME="OpenAirSwift_Mac"
+  - WORKSPACE="OpenAirSwift.xcworkspace"
+  matrix:
+  - DESTINATION="OS=11.2,name=iPhone 6"   SCHEME="$IOS_FRAMEWORK_SCHEME"     ACTION="build test"
+  - DESTINATION="arch=x86_64"             SCHEME="$OSX_FRAMEWORK_SCHEME"     ACTION="build test"
+
+before_install:
+  - brew update
+  - brew outdated xctool || brew upgrade xctool
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - pip install --user codecov
+  - pod install --project-directory=Tests
+
+script:
+  - set -o pipefail
+  - xcodebuild -scheme "$SCHEME" -workspace "$WORKSPACE" -destination "$DESTINATION" clean $ACTION | xcpretty
+
+after_success:
+  - pod lib lint
+  - bash <(curl -s https://codecov.io/bash)
