@@ -9,7 +9,7 @@
 
 import Foundation
 
-/// extension to Date that get start date of current week, in Gregorian calendar Sunday is first day in the week
+/// extension to Date that get start date of current week. It uses Gregorian calendar with Monday set as a first day in the week
 extension Date {
     struct GregorianCalendar {
         static var UTC: Calendar {
@@ -20,22 +20,16 @@ extension Date {
             }
         }
     }
-    
-    /// Specify on what day week starts in your region
-    public enum WeekStarts: Int {
-        case Mon = 2
-        case Sun = 1
-    }
 
     /// Get start of the week date
-    public func startOfWeek(starts: WeekStarts = .Mon) -> Date {
+    public func startOfWeek(starts: DayOfWeek = .Mon) -> Date {
         var components = GregorianCalendar.UTC.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)
-        components.weekday = starts.rawValue
+        components.weekday = (starts.rawValue % 6) + 2 - (starts.rawValue / 6)
         return GregorianCalendar.UTC.date(from: components)!
     }
 
     /// Get end of the week date
-    public func endOfWeek(starts: WeekStarts = .Mon) -> Date {
+    public func endOfWeek(starts: DayOfWeek = .Mon) -> Date {
         return startOfWeek(starts: starts).add(days: 7)
     }
 }
