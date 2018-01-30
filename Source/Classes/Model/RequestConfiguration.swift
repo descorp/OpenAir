@@ -9,13 +9,13 @@
 import Foundation
 
 public class RequestConfiguration {
-    var API_version="1.0"
+    let API_version="1.0"
     let client_ver: String
     let client: String
     let namespace: String
     let key: String
     
-    init(key: String,
+    public init(key: String,
          namespace: String = "deafult",
          client: String = "test app",
          client_ver: String = "1.0") {

@@ -67,8 +67,8 @@ public class OpenairAPIManager: NSObject {
         self.netSuitServerBaseURL = address
     }
     
-    public func authenticateUser(company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
-        let login = Login(login: userName, password: password, company: company)
+    public func authenticateUser(login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
+        
         let xml = builder.create(.auth(login: login),
                                      .readSimple(dataType: "User", attributes: [.method(.all),
                                                                                 .limit(1)]))
@@ -79,11 +79,9 @@ public class OpenairAPIManager: NSObject {
         consumedEndpoit = .authUser
     }
     
-    public func checkTimesheetExistsForDate(year: Int, month: Int, day: Int, company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func checkTimesheetExistsForDate(date: Date, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let login = Login(login: userName, password: password, company: company)
-        let date = OpenAirDate(year: year, month: month, day: day)
-        
+        let date = OpenAirDate(year: date.year, month: date.month, day: date.day)
         let xml = builder.create(.auth(login: login),
                                      .read(dataType: "Timesheet",
                                            body: [date],
@@ -99,11 +97,9 @@ public class OpenairAPIManager: NSObject {
         consumedEndpoit = .checkTimesheet
     }
     
-    public func addTimesheet(startDate: Date, endDate: Date, userId: String, company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func addTimesheet(startDate: Date, endDate: Date, userId: String, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let login = Login(login: userName, password: password, company: company)
         let timesheet = Timesheet(starts: startDate, ends: endDate, userid: userId)
-        
         let xml = builder.create(.auth(login: login), .add(timesheet))
         
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
@@ -113,9 +109,8 @@ public class OpenairAPIManager: NSObject {
         consumedEndpoit = .addTimeSheet
     }
     
-    public func addTaskToTimesheet(date: Date, hours: Int, timesheetId: String, projectId: String, projectTaskId: String, userId: String, company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func addTaskToTimesheet(date: Date, hours: Int, timesheetId: String, projectId: String, projectTaskId: String, userId: String, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let login = Login(login: userName, password: password, company: company)
         let task = Task(date: date, hours: hours, timesheetid: timesheetId, userid: userId, projectid: projectId, projecttaskid: projectTaskId)
         let xml = builder.create(.auth(login: login), .add(task))
         
@@ -126,9 +121,7 @@ public class OpenairAPIManager: NSObject {
         consumedEndpoit = .addTimeSheet
     }
     
-    public func getProjects(company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
-        
-        let login = Login(login: userName, password: password, company: company)
+    public func getProjects(login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
         let xml = builder.create(.auth(login: login),
                                      .readSimple(dataType: "Project", attributes: [.method(.all), .limit(40)]))
@@ -139,11 +132,9 @@ public class OpenairAPIManager: NSObject {
         consumedEndpoit = .projects
     }
     
-    public func getprojectTasks(projectId: String, company: String, userName: String, password: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func getprojectTasks(projectId: String, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let login = Login(login: userName, password: password, company: company)
         let projectTask = ProjectTask(projectId: projectId)
-        
         let xml = builder.create(.auth(login: login),
                                      .readObject(data: projectTask, attributes: [.method(.equalTo ), .limit(40)]))
         
@@ -153,11 +144,9 @@ public class OpenairAPIManager: NSObject {
         consumedEndpoit = .projectTask
     }
     
-    public func submitTimesheet(company: String, userName: String, password: String, timesheetId: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func submitTimesheet(login: Login, timesheetId: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let login = Login(login: userName, password: password, company: company)
         let timesheet = Timesheet(id: timesheetId)
-        
         let xml = builder.create(.auth(login: login), .submit(timesheet, approval: nil))
         
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {

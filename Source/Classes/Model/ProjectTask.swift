@@ -12,9 +12,9 @@ import Foundation
 public class ProjectTask: OpenAirDTO {
     public static var datatype: String = "Projecttask"
     
-    let id: String?
-    let projectid: String?
-    let name: String?
+    public let id: String?
+    public let projectid: String?
+    public let name: String?
     
     init(id: String, name: String) {
         self.id = id
