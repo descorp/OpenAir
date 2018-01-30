@@ -1,10 +1,10 @@
 # OpenAirSwift
 
-[![CI Status](http://img.shields.io/travis/Vladimir Abramichev/OpenAirSwift.svg?style=flat)](https://travis-ci.org/descorp/OpenAir)
+[![CI Status](http://img.shields.io/travis/descorp/OpenAir.svg?style=flat)](https://travis-ci.org/descorp/OpenAir)
 [![Version](https://img.shields.io/cocoapods/v/OpenAirSwift.svg?style=flat)](http://cocoapods.org/pods/OpenAirSwift)
 [![License](https://img.shields.io/cocoapods/l/OpenAirSwift.svg?style=flat)](http://cocoapods.org/pods/OpenAirSwift)
 [![Platform](https://img.shields.io/cocoapods/p/OpenAirSwift.svg?style=flat)](http://cocoapods.org/pods/OpenAirSwift)
-[![codecov](https://codecov.io/gh/descorp/SwiftBigInteger/branch/master/graph/badge.svg)](https://codecov.io/gh/descorp/OpenAir)
+[![codecov](https://codecov.io/gh/descorp/OpenAir/branch/master/graph/badge.svg)](https://codecov.io/gh/descorp/OpenAir)
 
 ## Example
 
@@ -31,4 +31,4 @@ OpenAirSwift is available under the MIT license. See the LICENSE file for more i
 
 ## TODO
 
-1. Adapt [![SwiftDate](https://github.com/malcommac/SwiftDate)]
+1. Adapt [SwiftDate](https://github.com/malcommac/SwiftDate)
