@@ -22,8 +22,12 @@ pod 'OpenAirSwift'
 
 ## Author
 
-Vladimir Abramichev, vladimirab@backbase.com
+Vladimir Abramichev, vladimir.abramichev@mail.ru
 
 ## License
 
 OpenAirSwift is available under the MIT license. See the LICENSE file for more info.
+
+## TODO
+
+1. Adapt [![SwiftDate](https://github.com/malcommac/SwiftDate)]
