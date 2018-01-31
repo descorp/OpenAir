@@ -28,8 +28,8 @@ public extension OpenAirDTO {
     }
     
     var xml: String {
-        let children = Mirror(reflecting: self).children.filter({ $0 != nil })
-        let keysValues = children.flatMap { ($0.label!, unwrap($0.value) as! AnyObject ) }
+        let children = Mirror(reflecting: self).children.filter({ $0.label != nil })
+        let keysValues = children.flatMap { ($0.label!, unwrap($0.value) as AnyObject ) }
         
         var parameters: [String] = []
         let typename = type(of: self).datatype
@@ -37,20 +37,6 @@ public extension OpenAirDTO {
         for (name, value) in keysValues.filter({ !($1 is NSNull) }) {
             if let object = value as? OpenAirDTO {
                 parameters.append("<\(name)>\(object.xml)</\(name)>")
-                continue
-            }
-            
-            if let objects = value as? [OpenAirDTO] {
-                for item in objects {
-                    parameters.append(item.xml)
-                }
-                continue
-            }
-            
-            if let objects = value as? [Any] {
-                for item in objects {
-                    parameters.append("<\(name)>\(item)</\(name)>")
-                }
                 continue
             }
             
