@@ -33,7 +33,7 @@ iOS and Mac library for access OpenAir XML API.
   s.requires_arc    = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
-  s.source_files = 'Source/**/*'
+  s.source_files = 'Source/Classes/**/*'
 
   # s.resource_bundles = {
   #   'OpenAirSwift' => ['OpenAirSwift/Assets/*.png']
