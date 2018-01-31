@@ -47,8 +47,30 @@
 		400E3211201F1D2700C52350 /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */; };
 		40530DE22021F14600C93BAB /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530DE12021F14600C93BAB /* Approval.swift */; };
 		40530DE32021F14600C93BAB /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530DE12021F14600C93BAB /* Approval.swift */; };
+		40530E0B202212F700C93BAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530E0A202212F700C93BAB /* main.swift */; };
 		40737A782020B5EC00EAA3C5 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */; };
 		40737A792020B64D00EAA3C5 /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */; };
+		407F83E420221359005278BB /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F83E120221355005278BB /* ConsoleIO.swift */; };
+		407F83E52022135B005278BB /* Openair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F83E020221355005278BB /* Openair.swift */; };
+		407F83EC2022176C005278BB /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8299F20161D4800840651 /* OpenairAPIManager.swift */; };
+		407F83ED2022176E005278BB /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31D8201893FC00C52350 /* RequestBuilder.swift */; };
+		407F83EE20221770005278BB /* CommandInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31FF201A23BC00C52350 /* CommandInterface.swift */; };
+		407F83EF20221772005278BB /* CommandImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3206201A243F00C52350 /* CommandImplementation.swift */; };
+		407F83F020221778005278BB /* OpenAirDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirDTO+Utillities.swift */; };
+		407F83F120221778005278BB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A120161D5000840651 /* DateExtensions.swift */; };
+		407F83F220221778005278BB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E320D201F1C8200C52350 /* StringExtensions.swift */; };
+		407F83F320221778005278BB /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */; };
+		407F83F42022177D005278BB /* OpenAirDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */; };
+		407F83F52022177D005278BB /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A620161D8900840651 /* Project.swift */; };
+		407F83F62022177D005278BB /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A820161D8900840651 /* ProjectTask.swift */; };
+		407F83F72022177D005278BB /* Timesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DC2018AD6600C52350 /* Timesheet.swift */; };
+		407F83F82022177D005278BB /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DF2018CA4400C52350 /* RequestConfiguration.swift */; };
+		407F83F92022177D005278BB /* OpenAirDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* OpenAirDate.swift */; };
+		407F83FA2022177D005278BB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E42018D5CC00C52350 /* Login.swift */; };
+		407F83FB2022177D005278BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E62018DF5E00C52350 /* User.swift */; };
+		407F83FC2022177D005278BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E92018E7D000C52350 /* Task.swift */; };
+		407F83FD2022177D005278BB /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */; };
+		407F83FE2022177D005278BB /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530DE12021F14600C93BAB /* Approval.swift */; };
 		40C088E5201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E6201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E8202069E7007B3935 /* TimesheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E7202069E7007B3935 /* TimesheetTests.swift */; };
@@ -90,6 +112,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		40530E06202212F700C93BAB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		05AF465249B8822C6F23722C /* Pods-OpenAirSwift_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAirSwift_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAirSwift_Mac/Pods-OpenAirSwift_Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		1D2050FCB72BED95ED68BE3B /* Pods-OpenAirSwift_MacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAirSwift_MacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAirSwift_MacTests/Pods-OpenAirSwift_MacTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +149,11 @@
 		400E320D201F1C8200C52350 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
 		40530DE12021F14600C93BAB /* Approval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Approval.swift; sourceTree = "<group>"; };
+		40530E08202212F700C93BAB /* OpenAirTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenAirTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		40530E0A202212F700C93BAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
+		407F83E020221355005278BB /* Openair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Openair.swift; sourceTree = "<group>"; };
+		407F83E120221355005278BB /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenAirSwift.podspec; sourceTree = "<group>"; };
 		40C088E4201F6258007B3935 /* OpenAirDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDateTests.swift; sourceTree = "<group>"; };
 		40C088E7202069E7007B3935 /* TimesheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesheetTests.swift; sourceTree = "<group>"; };
@@ -146,6 +184,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		40530E05202212F700C93BAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40F829AD20161E6100840651 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +253,25 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		40530DE620220EBD00C93BAB /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				40530E09202212F700C93BAB /* OpenAirTool */,
+			);
+			name = Examples;
+			path = ../Examples;
+			sourceTree = "<group>";
+		};
+		40530E09202212F700C93BAB /* OpenAirTool */ = {
+			isa = PBXGroup;
+			children = (
+				407F83E120221355005278BB /* ConsoleIO.swift */,
+				407F83E020221355005278BB /* Openair.swift */,
+				40530E0A202212F700C93BAB /* main.swift */,
+			);
+			path = OpenAirTool;
+			sourceTree = "<group>";
+		};
 		40C088E3201F6239007B3935 /* OpenAirDTOTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				40530DE620220EBD00C93BAB /* Examples */,
 				40F8299C20161CEC00840651 /* Source */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -276,6 +341,7 @@
 				40F829B920161E6200840651 /* OpenAirSwift_iOSTests.xctest */,
 				40F829CD20161E7A00840651 /* OpenAirSwift_Mac.framework */,
 				40F829D520161E7B00840651 /* OpenAirSwift_MacTests.xctest */,
+				40530E08202212F700C93BAB /* OpenAirTool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,6 +425,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		40530E07202212F700C93BAB /* OpenAirTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40530E0C202212F700C93BAB /* Build configuration list for PBXNativeTarget "OpenAirTool" */;
+			buildPhases = (
+				40530E04202212F700C93BAB /* Sources */,
+				40530E05202212F700C93BAB /* Frameworks */,
+				40530E06202212F700C93BAB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenAirTool;
+			productName = OpenAirTool;
+			productReference = 40530E08202212F700C93BAB /* OpenAirTool */;
+			productType = "com.apple.product-type.tool";
+		};
 		40F829B020161E6100840651 /* OpenAirSwift_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40F829C620161E6200840651 /* Build configuration list for PBXNativeTarget "OpenAirSwift_iOS" */;
@@ -451,6 +534,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					40530E07202212F700C93BAB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					40F829B020161E6100840651 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -486,6 +573,7 @@
 				40F829B820161E6200840651 /* OpenAirSwift_iOSTests */,
 				40F829CC20161E7A00840651 /* OpenAirSwift_Mac */,
 				40F829D420161E7B00840651 /* OpenAirSwift_MacTests */,
+				40530E07202212F700C93BAB /* OpenAirTool */,
 			);
 		};
 /* End PBXProject section */
@@ -701,6 +789,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		40530E04202212F700C93BAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407F83ED2022176E005278BB /* RequestBuilder.swift in Sources */,
+				40530E0B202212F700C93BAB /* main.swift in Sources */,
+				407F83F62022177D005278BB /* ProjectTask.swift in Sources */,
+				407F83FD2022177D005278BB /* DayOfWeek.swift in Sources */,
+				407F83F220221778005278BB /* StringExtensions.swift in Sources */,
+				407F83EC2022176C005278BB /* OpenairAPIManager.swift in Sources */,
+				407F83FE2022177D005278BB /* Approval.swift in Sources */,
+				407F83EF20221772005278BB /* CommandImplementation.swift in Sources */,
+				407F83F82022177D005278BB /* RequestConfiguration.swift in Sources */,
+				407F83F92022177D005278BB /* OpenAirDate.swift in Sources */,
+				407F83F52022177D005278BB /* Project.swift in Sources */,
+				407F83EE20221770005278BB /* CommandInterface.swift in Sources */,
+				407F83F72022177D005278BB /* Timesheet.swift in Sources */,
+				407F83F120221778005278BB /* DateExtensions.swift in Sources */,
+				407F83FC2022177D005278BB /* Task.swift in Sources */,
+				407F83E52022135B005278BB /* Openair.swift in Sources */,
+				407F83F42022177D005278BB /* OpenAirDTO.swift in Sources */,
+				407F83F320221778005278BB /* TimeIntervalExtensions.swift in Sources */,
+				407F83FA2022177D005278BB /* Login.swift in Sources */,
+				407F83F020221778005278BB /* OpenAirDTO+Utillities.swift in Sources */,
+				407F83E420221359005278BB /* ConsoleIO.swift in Sources */,
+				407F83FB2022177D005278BB /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40F829AC20161E6100840651 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -803,6 +920,44 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		40530E0D202212F700C93BAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		40530E0E202212F700C93BAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		40F829C220161E6200840651 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B66AA16913564CD3C7B3143 /* Pods-OpenAirSwift_iOS.debug.xcconfig */;
@@ -1135,6 +1290,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		40530E0C202212F700C93BAB /* Build configuration list for PBXNativeTarget "OpenAirTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40530E0D202212F700C93BAB /* Debug */,
+				40530E0E202212F700C93BAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		40F829C620161E6200840651 /* Build configuration list for PBXNativeTarget "OpenAirSwift_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
