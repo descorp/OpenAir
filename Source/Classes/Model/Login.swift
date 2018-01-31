@@ -19,13 +19,3 @@ public class Login: OpenAirDTO {
         self.company = company
     }
 }
-
-public class Approval: OpenAirDTO {
-    let cc: String
-    let note: String
-    
-    public init(cc: String, note: String) {
-        self.cc = cc
-        self.note = note
-    }
-}
