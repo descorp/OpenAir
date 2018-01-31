@@ -112,7 +112,7 @@
 		40C088E4201F6258007B3935 /* OpenAirDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDateTests.swift; sourceTree = "<group>"; };
 		40C088E7202069E7007B3935 /* TimesheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesheetTests.swift; sourceTree = "<group>"; };
 		40C088EB20206A68007B3935 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
-		40F8299F20161D4800840651 /* OpenairAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenairAPIManager.swift; path = Classes/OpenairAPIManager.swift; sourceTree = "<group>"; };
+		40F8299F20161D4800840651 /* OpenairAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenairAPIManager.swift; sourceTree = "<group>"; };
 		40F829A120161D5000840651 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		40F829A620161D8900840651 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		40F829A820161D8900840651 /* ProjectTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTask.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 				400E3206201A243F00C52350 /* CommandImplementation.swift */,
 			);
 			name = Source;
-			path = ../Source;
+			path = ../Source/Classes;
 			sourceTree = "<group>";
 		};
 		40F829A520161D6800840651 /* Model */ = {
@@ -240,8 +240,7 @@
 				400E31E92018E7D000C52350 /* Task.swift */,
 				40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */,
 			);
-			name = Model;
-			path = Classes/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
