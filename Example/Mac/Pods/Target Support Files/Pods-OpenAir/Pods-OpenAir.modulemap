@@ -1,6 +1,0 @@
-framework module Pods_OpenAir {
-  umbrella header "Pods-OpenAir-umbrella.h"
-
-  export *
-  module * { export * }
-}
