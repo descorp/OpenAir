@@ -24,12 +24,12 @@ iOS and Mac library for access OpenAir XML API.
   s.homepage         = 'https://github.com/descorp/OpenAir'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Vladimir Abramichev' => 'vladimirab@backbase.com' }
+  s.author           = { 'Vladimir Abramichev' => 'vladimir.abramichev@mail.ru' }
   s.source           = { :git => 'https://github.com/descorp/OpenAir.git', :tag => "#{s.version}" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = "10.9"
+  s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = "10.10"
   s.requires_arc    = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
