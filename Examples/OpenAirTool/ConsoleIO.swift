@@ -50,11 +50,11 @@ class ConsoleIO {
         print("Type \(executableName) without an option to enter interactive mode.")
     }
     
-    func getOption(option: String) -> (option:OptionType, value: String) {
+    static func getOption(option: String) -> (option:OptionType, value: String) {
         return (OptionType(value: option), option)
     }
     
-    func writeMessage(_ message: String, to: OutputType = .standard) {
+    static func writeMessage(_ message: String, to: OutputType = .standard) {
         switch to {
         case .standard:
             //the sequence \u{001B}[;m used in the standard case resets the terminal color back to the default.
@@ -70,7 +70,7 @@ class ConsoleIO {
         }
     }
     
-    func getInput(inputType: InputType = .text) -> String {
+    static func getInput(inputType: InputType = .text) -> String {
         if inputType == .text {
             let keyboard = FileHandle.standardInput
             let inputData = keyboard.availableData

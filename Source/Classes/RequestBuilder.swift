@@ -11,6 +11,7 @@ import Foundation
 public protocol PayloadBuilderType {
     func create(command: Command) -> String
     func create(_ commands: Command...) -> String
+    func create(_ commands: [Command]) -> String
 }
 
 public struct RequestBuilder: PayloadBuilderType {
@@ -34,7 +35,7 @@ public struct RequestBuilder: PayloadBuilderType {
         return requestContent.minifyedXml
     }
     
-    public func create(_ commands: Command...) -> String {
+    public func create(_ commands: [Command]) -> String {
         let commandsContent = commands.reduce("") { (current, next) in
             return current + "\r" + next.xml
         }
@@ -47,5 +48,9 @@ public struct RequestBuilder: PayloadBuilderType {
         \(request.xmlFooter)
         """
         return requestContent.minifyedXml
+    }
+    
+    public func create(_ commands: Command...) -> String {
+        return create(commands)
     }
 }

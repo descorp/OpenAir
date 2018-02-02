@@ -71,6 +71,8 @@
 		407F83FC2022177D005278BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E92018E7D000C52350 /* Task.swift */; };
 		407F83FD2022177D005278BB /* DayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */; };
 		407F83FE2022177D005278BB /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530DE12021F14600C93BAB /* Approval.swift */; };
+		407F840120236EEA005278BB /* OpenAirManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F840020236EEA005278BB /* OpenAirManager.swift */; };
+		407F840220236EEA005278BB /* OpenAirManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F840020236EEA005278BB /* OpenAirManager.swift */; };
 		40C088E5201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E6201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E8202069E7007B3935 /* TimesheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E7202069E7007B3935 /* TimesheetTests.swift */; };
@@ -85,10 +87,6 @@
 		40F829E5201625FF00840651 /* RequestBuilderCanAddTaskToTimesheetsTestsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* RequestBuilderCanAddTaskToTimesheetsTestsSpec.swift */; };
 		40F829E62016260300840651 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A120161D5000840651 /* DateExtensions.swift */; };
 		40F829E72016260400840651 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A120161D5000840651 /* DateExtensions.swift */; };
-		40F829E82016260600840651 /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8299F20161D4800840651 /* OpenairAPIManager.swift */; };
-		40F829E92016260700840651 /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8299F20161D4800840651 /* OpenairAPIManager.swift */; };
-		40F829EC2016260D00840651 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A620161D8900840651 /* Project.swift */; };
-		40F829ED2016260E00840651 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A620161D8900840651 /* Project.swift */; };
 		40F829EE2016261000840651 /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A820161D8900840651 /* ProjectTask.swift */; };
 		40F829EF2016261100840651 /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A820161D8900840651 /* ProjectTask.swift */; };
 		4868A6DB1B8DBE28E765F773 /* Pods_OpenAirSwift_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609B69A6FD62F97DDD5C095D /* Pods_OpenAirSwift_iOSTests.framework */; };
@@ -154,6 +152,7 @@
 		40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeek.swift; sourceTree = "<group>"; };
 		407F83E020221355005278BB /* Openair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Openair.swift; sourceTree = "<group>"; };
 		407F83E120221355005278BB /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
+		407F840020236EEA005278BB /* OpenAirManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirManager.swift; sourceTree = "<group>"; };
 		40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenAirSwift.podspec; sourceTree = "<group>"; };
 		40C088E4201F6258007B3935 /* OpenAirDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDateTests.swift; sourceTree = "<group>"; };
 		40C088E7202069E7007B3935 /* TimesheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesheetTests.swift; sourceTree = "<group>"; };
@@ -265,11 +264,21 @@
 		40530E09202212F700C93BAB /* OpenAirTool */ = {
 			isa = PBXGroup;
 			children = (
+				407F83FF20236514005278BB /* Model */,
+				40F8299F20161D4800840651 /* OpenairAPIManager.swift */,
 				407F83E120221355005278BB /* ConsoleIO.swift */,
 				407F83E020221355005278BB /* Openair.swift */,
 				40530E0A202212F700C93BAB /* main.swift */,
 			);
 			path = OpenAirTool;
+			sourceTree = "<group>";
+		};
+		407F83FF20236514005278BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40F829A620161D8900840651 /* Project.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		40C088E3201F6239007B3935 /* OpenAirDTOTests */ = {
@@ -294,10 +303,10 @@
 			children = (
 				400E320C201F1C5700C52350 /* Utilities */,
 				40F829A520161D6800840651 /* Model */,
-				40F8299F20161D4800840651 /* OpenairAPIManager.swift */,
 				400E31D8201893FC00C52350 /* RequestBuilder.swift */,
 				400E31FF201A23BC00C52350 /* CommandInterface.swift */,
 				400E3206201A243F00C52350 /* CommandImplementation.swift */,
+				407F840020236EEA005278BB /* OpenAirManager.swift */,
 			);
 			name = Source;
 			path = ../Source/Classes;
@@ -307,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */,
-				40F829A620161D8900840651 /* Project.swift */,
 				40F829A820161D8900840651 /* ProjectTask.swift */,
 				400E31DC2018AD6600C52350 /* Timesheet.swift */,
 				400E31DF2018CA4400C52350 /* RequestConfiguration.swift */,
@@ -822,15 +830,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407F840120236EEA005278BB /* OpenAirManager.swift in Sources */,
 				40737A782020B5EC00EAA3C5 /* DayOfWeek.swift in Sources */,
 				400E3211201F1D2700C52350 /* TimeIntervalExtensions.swift in Sources */,
 				400E31E22018D14300C52350 /* OpenAirDate.swift in Sources */,
 				40F829E62016260300840651 /* DateExtensions.swift in Sources */,
 				400E31DD2018AD6600C52350 /* Timesheet.swift in Sources */,
-				40F829E82016260600840651 /* OpenairAPIManager.swift in Sources */,
 				400E31D9201893FC00C52350 /* RequestBuilder.swift in Sources */,
 				40530DE22021F14600C93BAB /* Approval.swift in Sources */,
-				40F829EC2016260D00840651 /* Project.swift in Sources */,
 				400E3207201A243F00C52350 /* CommandImplementation.swift in Sources */,
 				40F829EE2016261000840651 /* ProjectTask.swift in Sources */,
 				400E31EA2018E7D000C52350 /* Task.swift in Sources */,
@@ -865,6 +872,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407F840220236EEA005278BB /* OpenAirManager.swift in Sources */,
 				400E3204201A23E900C52350 /* User.swift in Sources */,
 				400E3202201A23DE00C52350 /* Timesheet.swift in Sources */,
 				40F829E72016260400840651 /* DateExtensions.swift in Sources */,
@@ -875,8 +883,6 @@
 				40530DE32021F14600C93BAB /* Approval.swift in Sources */,
 				400E31DE2018B41800C52350 /* OpenAirDTO.swift in Sources */,
 				40C088EE2020975C007B3935 /* StringExtensions.swift in Sources */,
-				40F829E92016260700840651 /* OpenairAPIManager.swift in Sources */,
-				40F829ED2016260E00840651 /* Project.swift in Sources */,
 				40F829EF2016261100840651 /* ProjectTask.swift in Sources */,
 				40C088EF20209761007B3935 /* TimeIntervalExtensions.swift in Sources */,
 				400E31EB2019D90100C52350 /* RequestConfiguration.swift in Sources */,

@@ -72,11 +72,10 @@ public class OpenairAPIManager: NSObject {
         let xml = builder.create(.auth(login: login),
                                      .readSimple(dataType: "User", attributes: [.method(.all),
                                                                                 .limit(1)]))
-        
+        consumedEndpoit = .authUser
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        consumedEndpoit = .authUser
     }
     
     public func checkTimesheetExistsForDate(date: Date, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
@@ -90,35 +89,30 @@ public class OpenairAPIManager: NSObject {
                                                         .filter("date-equal-to"),
                                                         .filter("starts")]))
         
+        consumedEndpoit = .checkTimesheet
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        
-        consumedEndpoit = .checkTimesheet
     }
     
-    public func addTimesheet(startDate: Date, endDate: Date, userId: String, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func addTimesheet(timesheet: Timesheet, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let timesheet = Timesheet(starts: startDate, ends: endDate, userid: userId)
         let xml = builder.create(.auth(login: login), .add(timesheet))
         
+        consumedEndpoit = .addTimeSheet
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        
-        consumedEndpoit = .addTimeSheet
     }
     
-    public func addTaskToTimesheet(date: Date, hours: Int, timesheetId: String, projectId: String, projectTaskId: String, userId: String, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
+    public func addTaskToTimesheet(task: Task, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let task = Task(date: date, hours: hours, timesheetid: timesheetId, userid: userId, projectid: projectId, projecttaskid: projectTaskId)
         let xml = builder.create(.auth(login: login), .add(task))
         
+        consumedEndpoit = .addTimeSheet
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        
-        consumedEndpoit = .addTimeSheet
     }
     
     public func getProjects(login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
@@ -126,10 +120,11 @@ public class OpenairAPIManager: NSObject {
         let xml = builder.create(.auth(login: login),
                                      .readSimple(dataType: "Project", attributes: [.method(.all), .limit(40)]))
         
+        consumedEndpoit = .projects
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        consumedEndpoit = .projects
+        
     }
     
     public func getprojectTasks(projectId: String, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
@@ -138,10 +133,11 @@ public class OpenairAPIManager: NSObject {
         let xml = builder.create(.auth(login: login),
                                      .readObject(data: projectTask, attributes: [.method(.equalTo ), .limit(40)]))
         
+        consumedEndpoit = .projectTask
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        consumedEndpoit = .projectTask
+        
     }
     
     public func submitTimesheet(login: Login, timesheetId: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
@@ -149,10 +145,11 @@ public class OpenairAPIManager: NSObject {
         let timesheet = Timesheet(id: timesheetId)
         let xml = builder.create(.auth(login: login), .submit(timesheet, approval: nil))
         
+        consumedEndpoit = .submitTimesheet
         if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             sendRequest(path: netSuitServerBaseURL, requestPayload: payload, httpMethod: "POST", callback: callback)
         }
-        consumedEndpoit = .submitTimesheet
+        
     }
     
     public func sendRequest(path: String, requestPayload: Data, httpMethod: String, callback: @escaping OpenairAPIManagerCompletionHandler) {
@@ -161,7 +158,6 @@ public class OpenairAPIManager: NSObject {
         request = NSMutableURLRequest(url: url)
         request.httpMethod = httpMethod
         request.httpBody = requestPayload
-        
         completionHandler = callback
         
         var shouldKeepRunning = true
@@ -323,3 +319,4 @@ extension OpenairAPIManager: XMLParserDelegate {
         }
     }
 }
+
