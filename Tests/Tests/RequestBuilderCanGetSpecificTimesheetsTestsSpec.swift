@@ -41,7 +41,7 @@ class RequestBuilderCanGetSpecificTimesheetsTestsSpec: QuickSpec {
                 let date = Date()
                 
                 let login = Login(login: userName, password: password, company: company)
-                let specificDate = OpenAirDate(year: date.year, month: date.month, day: date.day)
+                let specificDate = DateTime(year: date.year, month: date.month, day: date.day)
                 let request = requestBuilder.create(.auth(login: login),
                                                     .read(dataType: "Timesheet",
                                                           body: [specificDate],
@@ -72,7 +72,7 @@ class RequestBuilderCanGetSpecificTimesheetsTestsSpec: QuickSpec {
                 """
                 
                 expect(request).toNot(beNil())
-                expect(request).to(equal(actual.minifyedXml))
+                expect(request).to(equal(actual.minifiedXml))
             }
         }
     }

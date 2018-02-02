@@ -62,7 +62,7 @@ class RequestBuilderCanGetProjectsTasksTestsSpec: QuickSpec {
                 """
                 
                 expect(request).toNot(beNil())
-                expect(request).to(equal(actual.minifyedXml))
+                expect(request).to(equal(actual.minifiedXml))
             }
         }
     }

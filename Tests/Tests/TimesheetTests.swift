@@ -51,7 +51,7 @@ class TimesheetDtoTests: QuickSpec {
                 </Timesheet>
                 """
                 
-                expect(timesheet.xml).to(equal(actual.minifyedXml))
+                expect(timesheet.xml).to(equal(actual.minifiedXml))
             }
         }
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Approval: OpenAirDTO {
+public class Approval: OpenAirOutgoingDTO {
     let cc: String
     let note: String
     

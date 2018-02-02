@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class Task: OpenAirDTO {
-    let date: OpenAirDate
+public class Task: OpenAirOutgoingDTO {
+    let date: DateTime
     let hours: Int
     let timesheetid: String
     let userid: String
@@ -17,7 +17,7 @@ public class Task: OpenAirDTO {
     let projecttaskid: String
     
     public init(date: Date, hours: Int, timesheetid: String, userid: String, projectid: String, projecttaskid: String) {
-        self.date = OpenAirDate(year: date.year, month: date.month, day: date.day)
+        self.date = DateTime(year: date.year, month: date.month, day: date.day)
         self.hours = hours
         self.timesheetid = timesheetid
         self.userid = userid

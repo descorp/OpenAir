@@ -8,18 +8,18 @@
 
 import Foundation
 
-public class Timesheet: OpenAirDTO {
+public class Timesheet: OpenAirOutgoingDTO {
     
     let id: String?
     let name: String?
     let userid: String?
-    let starts: OpenAirDate?
-    let ends: OpenAirDate?
+    let starts: DateTime?
+    let ends: DateTime?
     
     public init(starts: Date, ends: Date, userid: String, name: String? = nil) {
         self.name = name ?? "\(starts.shortISO8610) to \(ends.shortISO8610)"
-        self.starts = OpenAirDate(year: starts.year, month: starts.month, day: starts.day)
-        self.ends = OpenAirDate(year: ends.year, month: ends.month, day: ends.day)
+        self.starts = DateTime(year: starts.year, month: starts.month, day: starts.day)
+        self.ends = DateTime(year: ends.year, month: ends.month, day: ends.day)
         self.userid = userid
         id = nil
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Login: OpenAirDTO {
+public class Login: OpenAirOutgoingDTO {
     let user: String
     let password: String
     let company: String

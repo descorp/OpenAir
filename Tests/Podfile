@@ -1,10 +1,12 @@
 use_frameworks!
 
 target 'OpenAirSwift_iOS' do
+    pod "PromiseKit", "~> 4.4"
     pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
 end
 
 target 'OpenAirSwift_Mac' do
+    pod "PromiseKit", "~> 4.4"
     pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
 end
 

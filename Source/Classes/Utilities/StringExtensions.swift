@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    var minifyedXml: String {
+    var minifiedXml: String {
         return self.components(separatedBy: .newlines).map{ $0.trimmingCharacters(in: .whitespaces)}.joined()
     }
 }

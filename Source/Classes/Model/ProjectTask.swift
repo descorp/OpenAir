@@ -9,22 +9,12 @@
 
 import Foundation
 
-public class ProjectTask: OpenAirDTO {
+public class ProjectTask: OpenAirOutgoingDTO {
     public static var datatype: String = "Projecttask"
     
-    public let id: String?
     public let projectid: String?
-    public let name: String?
-    
-    init(id: String, name: String) {
-        self.id = id
-        self.name = name
-        projectid = nil
-    }
     
     init(projectId: String) {
         self.projectid = projectId
-        id = nil
-        name = nil
     }
 }

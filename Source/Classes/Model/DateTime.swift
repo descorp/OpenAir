@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class OpenAirDate: OpenAirDTO {
+public class DateTime: OpenAirOutgoingDTO {
     
     let year: Int?
     let month: Int?

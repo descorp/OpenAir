@@ -10,12 +10,11 @@
 		305FBE7F99B0091B15EB5FE1 /* Pods_OpenAirSwift_MacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E64ED5ECDBF413BBF01B552 /* Pods_OpenAirSwift_MacTests.framework */; };
 		3801866CB5DD624B6E1B5FF8 /* Pods_OpenAirSwift_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD56E53BF2956E09C98B05E /* Pods_OpenAirSwift_Mac.framework */; };
 		400E31D9201893FC00C52350 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31D8201893FC00C52350 /* RequestBuilder.swift */; };
-		400E31DB2018ACBA00C52350 /* OpenAirDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */; };
+		400E31DB2018ACBA00C52350 /* OpenAirDTOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTOProtocols.swift */; };
 		400E31DD2018AD6600C52350 /* Timesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DC2018AD6600C52350 /* Timesheet.swift */; };
-		400E31DE2018B41800C52350 /* OpenAirDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */; };
 		400E31E02018CA4400C52350 /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DF2018CA4400C52350 /* RequestConfiguration.swift */; };
-		400E31E22018D14300C52350 /* OpenAirDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* OpenAirDate.swift */; };
-		400E31E32018D1B000C52350 /* OpenAirDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* OpenAirDate.swift */; };
+		400E31E22018D14300C52350 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* DateTime.swift */; };
+		400E31E32018D1B000C52350 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* DateTime.swift */; };
 		400E31E52018D5CC00C52350 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E42018D5CC00C52350 /* Login.swift */; };
 		400E31E72018DF5E00C52350 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E62018DF5E00C52350 /* User.swift */; };
 		400E31E82018E5E900C52350 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31D8201893FC00C52350 /* RequestBuilder.swift */; };
@@ -41,8 +40,8 @@
 		400E3205201A23EC00C52350 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E92018E7D000C52350 /* Task.swift */; };
 		400E3207201A243F00C52350 /* CommandImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3206201A243F00C52350 /* CommandImplementation.swift */; };
 		400E3208201A245800C52350 /* CommandImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3206201A243F00C52350 /* CommandImplementation.swift */; };
-		400E320A201AA05E00C52350 /* OpenAirDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirDTO+Utillities.swift */; };
-		400E320B201AA06200C52350 /* OpenAirDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirDTO+Utillities.swift */; };
+		400E320A201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift */; };
+		400E320B201AA06200C52350 /* OpenAirOutgoingDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift */; };
 		400E320E201F1C8200C52350 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E320D201F1C8200C52350 /* StringExtensions.swift */; };
 		400E3211201F1D2700C52350 /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */; };
 		40530DE22021F14600C93BAB /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530DE12021F14600C93BAB /* Approval.swift */; };
@@ -53,19 +52,17 @@
 		407F83E420221359005278BB /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F83E120221355005278BB /* ConsoleIO.swift */; };
 		407F83E52022135B005278BB /* Openair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F83E020221355005278BB /* Openair.swift */; };
 		407F83EC2022176C005278BB /* OpenairAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8299F20161D4800840651 /* OpenairAPIManager.swift */; };
-		407F83ED2022176E005278BB /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31D8201893FC00C52350 /* RequestBuilder.swift */; };
 		407F83EE20221770005278BB /* CommandInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31FF201A23BC00C52350 /* CommandInterface.swift */; };
 		407F83EF20221772005278BB /* CommandImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3206201A243F00C52350 /* CommandImplementation.swift */; };
-		407F83F020221778005278BB /* OpenAirDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirDTO+Utillities.swift */; };
+		407F83F020221778005278BB /* OpenAirOutgoingDTO+Utillities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3209201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift */; };
 		407F83F120221778005278BB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A120161D5000840651 /* DateExtensions.swift */; };
 		407F83F220221778005278BB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E320D201F1C8200C52350 /* StringExtensions.swift */; };
 		407F83F320221778005278BB /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */; };
-		407F83F42022177D005278BB /* OpenAirDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */; };
 		407F83F52022177D005278BB /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A620161D8900840651 /* Project.swift */; };
 		407F83F62022177D005278BB /* ProjectTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F829A820161D8900840651 /* ProjectTask.swift */; };
 		407F83F72022177D005278BB /* Timesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DC2018AD6600C52350 /* Timesheet.swift */; };
 		407F83F82022177D005278BB /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DF2018CA4400C52350 /* RequestConfiguration.swift */; };
-		407F83F92022177D005278BB /* OpenAirDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* OpenAirDate.swift */; };
+		407F83F92022177D005278BB /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E12018D14300C52350 /* DateTime.swift */; };
 		407F83FA2022177D005278BB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E42018D5CC00C52350 /* Login.swift */; };
 		407F83FB2022177D005278BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E62018DF5E00C52350 /* User.swift */; };
 		407F83FC2022177D005278BB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31E92018E7D000C52350 /* Task.swift */; };
@@ -73,6 +70,21 @@
 		407F83FE2022177D005278BB /* Approval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40530DE12021F14600C93BAB /* Approval.swift */; };
 		407F840120236EEA005278BB /* OpenAirManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F840020236EEA005278BB /* OpenAirManager.swift */; };
 		407F840220236EEA005278BB /* OpenAirManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F840020236EEA005278BB /* OpenAirManager.swift */; };
+		40B720E020246829006B0F38 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720DF20246829006B0F38 /* XMLParser.swift */; };
+		40B720E4202471D4006B0F38 /* PayloadBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */; };
+		40B720E820247222006B0F38 /* Responce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E720247222006B0F38 /* Responce.swift */; };
+		40B720EB20247241006B0F38 /* XMLParserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EA20247241006B0F38 /* XMLParserType.swift */; };
+		40B720ED202472CD006B0F38 /* APIAccessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EC202472CD006B0F38 /* APIAccessProvider.swift */; };
+		40B720EF20247453006B0F38 /* OpenAirAPIAccessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EE20247453006B0F38 /* OpenAirAPIAccessProvider.swift */; };
+		40B720F020247A38006B0F38 /* OpenAirAPIAccessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EE20247453006B0F38 /* OpenAirAPIAccessProvider.swift */; };
+		40B720FE20248EE4006B0F38 /* OpenAirDTOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTOProtocols.swift */; };
+		40B720FF20248EE4006B0F38 /* PayloadBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */; };
+		40B7210020248EE4006B0F38 /* Responce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E720247222006B0F38 /* Responce.swift */; };
+		40B7210120248EE4006B0F38 /* XMLParserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EA20247241006B0F38 /* XMLParserType.swift */; };
+		40B7210220248EE4006B0F38 /* APIAccessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EC202472CD006B0F38 /* APIAccessProvider.swift */; };
+		40B7210320248F15006B0F38 /* OpenAirDTOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTOProtocols.swift */; };
+		40B7210420248F3F006B0F38 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31D8201893FC00C52350 /* RequestBuilder.swift */; };
+		40B7210520248F43006B0F38 /* PayloadBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */; };
 		40C088E5201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E6201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E8202069E7007B3935 /* TimesheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E7202069E7007B3935 /* TimesheetTests.swift */; };
@@ -128,10 +140,10 @@
 		1F2F7574F9E0283D8469929E /* Pods-OpenAirSwift_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAirSwift_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenAirSwift_iOS/Pods-OpenAirSwift_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		2AD56E53BF2956E09C98B05E /* Pods_OpenAirSwift_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenAirSwift_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		400E31D8201893FC00C52350 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
-		400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDTO.swift; sourceTree = "<group>"; };
+		400E31DA2018ACBA00C52350 /* OpenAirDTOProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDTOProtocols.swift; sourceTree = "<group>"; };
 		400E31DC2018AD6600C52350 /* Timesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timesheet.swift; sourceTree = "<group>"; };
 		400E31DF2018CA4400C52350 /* RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfiguration.swift; sourceTree = "<group>"; };
-		400E31E12018D14300C52350 /* OpenAirDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDate.swift; sourceTree = "<group>"; };
+		400E31E12018D14300C52350 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		400E31E42018D5CC00C52350 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		400E31E62018DF5E00C52350 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		400E31E92018E7D000C52350 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -143,7 +155,7 @@
 		400E31FC201A09D700C52350 /* RequestBuilderCanGetProjectsTestsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderCanGetProjectsTestsSpec.swift; sourceTree = "<group>"; };
 		400E31FF201A23BC00C52350 /* CommandInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandInterface.swift; sourceTree = "<group>"; };
 		400E3206201A243F00C52350 /* CommandImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandImplementation.swift; sourceTree = "<group>"; };
-		400E3209201AA05E00C52350 /* OpenAirDTO+Utillities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenAirDTO+Utillities.swift"; sourceTree = "<group>"; };
+		400E3209201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenAirOutgoingDTO+Utillities.swift"; sourceTree = "<group>"; };
 		400E320D201F1C8200C52350 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
 		40530DE12021F14600C93BAB /* Approval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Approval.swift; sourceTree = "<group>"; };
@@ -153,6 +165,12 @@
 		407F83E020221355005278BB /* Openair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Openair.swift; sourceTree = "<group>"; };
 		407F83E120221355005278BB /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		407F840020236EEA005278BB /* OpenAirManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirManager.swift; sourceTree = "<group>"; };
+		40B720DF20246829006B0F38 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadBuilderType.swift; sourceTree = "<group>"; };
+		40B720E720247222006B0F38 /* Responce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responce.swift; sourceTree = "<group>"; };
+		40B720EA20247241006B0F38 /* XMLParserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserType.swift; sourceTree = "<group>"; };
+		40B720EC202472CD006B0F38 /* APIAccessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAccessProvider.swift; sourceTree = "<group>"; };
+		40B720EE20247453006B0F38 /* OpenAirAPIAccessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirAPIAccessProvider.swift; sourceTree = "<group>"; };
 		40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenAirSwift.podspec; sourceTree = "<group>"; };
 		40C088E4201F6258007B3935 /* OpenAirDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDateTests.swift; sourceTree = "<group>"; };
 		40C088E7202069E7007B3935 /* TimesheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesheetTests.swift; sourceTree = "<group>"; };
@@ -244,7 +262,8 @@
 		400E320C201F1C5700C52350 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				400E3209201AA05E00C52350 /* OpenAirDTO+Utillities.swift */,
+				40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */,
+				400E3209201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift */,
 				40F829A120161D5000840651 /* DateExtensions.swift */,
 				400E320D201F1C8200C52350 /* StringExtensions.swift */,
 				400E3210201F1D2700C52350 /* TimeIntervalExtensions.swift */,
@@ -281,6 +300,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		40B720E2202471B1006B0F38 /* Abstracts */ = {
+			isa = PBXGroup;
+			children = (
+				400E31DA2018ACBA00C52350 /* OpenAirDTOProtocols.swift */,
+				40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */,
+				40B720E720247222006B0F38 /* Responce.swift */,
+				40B720EA20247241006B0F38 /* XMLParserType.swift */,
+				40B720EC202472CD006B0F38 /* APIAccessProvider.swift */,
+			);
+			path = Abstracts;
+			sourceTree = "<group>";
+		};
 		40C088E3201F6239007B3935 /* OpenAirDTOTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,12 +332,15 @@
 		40F8299C20161CEC00840651 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				40B720E2202471B1006B0F38 /* Abstracts */,
 				400E320C201F1C5700C52350 /* Utilities */,
 				40F829A520161D6800840651 /* Model */,
 				400E31D8201893FC00C52350 /* RequestBuilder.swift */,
 				400E31FF201A23BC00C52350 /* CommandInterface.swift */,
 				400E3206201A243F00C52350 /* CommandImplementation.swift */,
 				407F840020236EEA005278BB /* OpenAirManager.swift */,
+				40B720DF20246829006B0F38 /* XMLParser.swift */,
+				40B720EE20247453006B0F38 /* OpenAirAPIAccessProvider.swift */,
 			);
 			name = Source;
 			path = ../Source/Classes;
@@ -315,15 +349,13 @@
 		40F829A520161D6800840651 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				400E31DA2018ACBA00C52350 /* OpenAirDTO.swift */,
 				40F829A820161D8900840651 /* ProjectTask.swift */,
 				400E31DC2018AD6600C52350 /* Timesheet.swift */,
 				400E31DF2018CA4400C52350 /* RequestConfiguration.swift */,
-				400E31E12018D14300C52350 /* OpenAirDate.swift */,
+				400E31E12018D14300C52350 /* DateTime.swift */,
 				400E31E42018D5CC00C52350 /* Login.swift */,
 				400E31E62018DF5E00C52350 /* User.swift */,
 				400E31E92018E7D000C52350 /* Task.swift */,
-				40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */,
 				40530DE12021F14600C93BAB /* Approval.swift */,
 			);
 			path = Model;
@@ -627,12 +659,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OpenAirSwift_iOSTests/Pods-OpenAirSwift_iOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-iOS/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit-iOS/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser-iOS/SwiftyXMLParser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,12 +731,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OpenAirSwift_MacTests/Pods-OpenAirSwift_MacTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble-macOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-macOS/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit-macOS/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser-macOS/SwiftyXMLParser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,7 +837,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407F83ED2022176E005278BB /* RequestBuilder.swift in Sources */,
 				40530E0B202212F700C93BAB /* main.swift in Sources */,
 				407F83F62022177D005278BB /* ProjectTask.swift in Sources */,
 				407F83FD2022177D005278BB /* DayOfWeek.swift in Sources */,
@@ -809,18 +844,20 @@
 				407F83EC2022176C005278BB /* OpenairAPIManager.swift in Sources */,
 				407F83FE2022177D005278BB /* Approval.swift in Sources */,
 				407F83EF20221772005278BB /* CommandImplementation.swift in Sources */,
+				40B7210420248F3F006B0F38 /* RequestBuilder.swift in Sources */,
 				407F83F82022177D005278BB /* RequestConfiguration.swift in Sources */,
-				407F83F92022177D005278BB /* OpenAirDate.swift in Sources */,
+				407F83F92022177D005278BB /* DateTime.swift in Sources */,
 				407F83F52022177D005278BB /* Project.swift in Sources */,
 				407F83EE20221770005278BB /* CommandInterface.swift in Sources */,
 				407F83F72022177D005278BB /* Timesheet.swift in Sources */,
 				407F83F120221778005278BB /* DateExtensions.swift in Sources */,
+				40B7210320248F15006B0F38 /* OpenAirDTOProtocols.swift in Sources */,
 				407F83FC2022177D005278BB /* Task.swift in Sources */,
 				407F83E52022135B005278BB /* Openair.swift in Sources */,
-				407F83F42022177D005278BB /* OpenAirDTO.swift in Sources */,
 				407F83F320221778005278BB /* TimeIntervalExtensions.swift in Sources */,
+				40B7210520248F43006B0F38 /* PayloadBuilderType.swift in Sources */,
 				407F83FA2022177D005278BB /* Login.swift in Sources */,
-				407F83F020221778005278BB /* OpenAirDTO+Utillities.swift in Sources */,
+				407F83F020221778005278BB /* OpenAirOutgoingDTO+Utillities.swift in Sources */,
 				407F83E420221359005278BB /* ConsoleIO.swift in Sources */,
 				407F83FB2022177D005278BB /* User.swift in Sources */,
 			);
@@ -832,8 +869,9 @@
 			files = (
 				407F840120236EEA005278BB /* OpenAirManager.swift in Sources */,
 				40737A782020B5EC00EAA3C5 /* DayOfWeek.swift in Sources */,
+				40B720ED202472CD006B0F38 /* APIAccessProvider.swift in Sources */,
 				400E3211201F1D2700C52350 /* TimeIntervalExtensions.swift in Sources */,
-				400E31E22018D14300C52350 /* OpenAirDate.swift in Sources */,
+				400E31E22018D14300C52350 /* DateTime.swift in Sources */,
 				40F829E62016260300840651 /* DateExtensions.swift in Sources */,
 				400E31DD2018AD6600C52350 /* Timesheet.swift in Sources */,
 				400E31D9201893FC00C52350 /* RequestBuilder.swift in Sources */,
@@ -841,13 +879,18 @@
 				400E3207201A243F00C52350 /* CommandImplementation.swift in Sources */,
 				40F829EE2016261000840651 /* ProjectTask.swift in Sources */,
 				400E31EA2018E7D000C52350 /* Task.swift in Sources */,
+				40B720E820247222006B0F38 /* Responce.swift in Sources */,
 				400E31E72018DF5E00C52350 /* User.swift in Sources */,
 				400E31E02018CA4400C52350 /* RequestConfiguration.swift in Sources */,
 				400E3200201A23BC00C52350 /* CommandInterface.swift in Sources */,
 				400E31E52018D5CC00C52350 /* Login.swift in Sources */,
-				400E320A201AA05E00C52350 /* OpenAirDTO+Utillities.swift in Sources */,
-				400E31DB2018ACBA00C52350 /* OpenAirDTO.swift in Sources */,
+				40B720EF20247453006B0F38 /* OpenAirAPIAccessProvider.swift in Sources */,
+				40B720EB20247241006B0F38 /* XMLParserType.swift in Sources */,
+				400E320A201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift in Sources */,
+				400E31DB2018ACBA00C52350 /* OpenAirDTOProtocols.swift in Sources */,
 				400E320E201F1C8200C52350 /* StringExtensions.swift in Sources */,
+				40B720E4202471D4006B0F38 /* PayloadBuilderType.swift in Sources */,
+				40B720E020246829006B0F38 /* XMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,21 +917,26 @@
 			files = (
 				407F840220236EEA005278BB /* OpenAirManager.swift in Sources */,
 				400E3204201A23E900C52350 /* User.swift in Sources */,
+				40B7210220248EE4006B0F38 /* APIAccessProvider.swift in Sources */,
 				400E3202201A23DE00C52350 /* Timesheet.swift in Sources */,
 				40F829E72016260400840651 /* DateExtensions.swift in Sources */,
 				400E3203201A23E500C52350 /* Login.swift in Sources */,
-				400E31E32018D1B000C52350 /* OpenAirDate.swift in Sources */,
+				400E31E32018D1B000C52350 /* DateTime.swift in Sources */,
 				400E3201201A23CF00C52350 /* CommandInterface.swift in Sources */,
 				400E3208201A245800C52350 /* CommandImplementation.swift in Sources */,
 				40530DE32021F14600C93BAB /* Approval.swift in Sources */,
-				400E31DE2018B41800C52350 /* OpenAirDTO.swift in Sources */,
 				40C088EE2020975C007B3935 /* StringExtensions.swift in Sources */,
 				40F829EF2016261100840651 /* ProjectTask.swift in Sources */,
+				40B7210020248EE4006B0F38 /* Responce.swift in Sources */,
 				40C088EF20209761007B3935 /* TimeIntervalExtensions.swift in Sources */,
 				400E31EB2019D90100C52350 /* RequestConfiguration.swift in Sources */,
 				400E3205201A23EC00C52350 /* Task.swift in Sources */,
 				40737A792020B64D00EAA3C5 /* DayOfWeek.swift in Sources */,
-				400E320B201AA06200C52350 /* OpenAirDTO+Utillities.swift in Sources */,
+				40B7210120248EE4006B0F38 /* XMLParserType.swift in Sources */,
+				40B720F020247A38006B0F38 /* OpenAirAPIAccessProvider.swift in Sources */,
+				40B720FE20248EE4006B0F38 /* OpenAirDTOProtocols.swift in Sources */,
+				400E320B201AA06200C52350 /* OpenAirOutgoingDTO+Utillities.swift in Sources */,
+				40B720FF20248EE4006B0F38 /* PayloadBuilderType.swift in Sources */,
 				400E31E82018E5E900C52350 /* RequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
