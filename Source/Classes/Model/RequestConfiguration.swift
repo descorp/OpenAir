@@ -15,6 +15,20 @@ public class RequestConfiguration {
     let namespace: String
     let key: String
     
+    /**
+     Initiate new instance of RequestConfiguration to access OpenAir API
+     
+     The namespace and APIkey parameters are used to verify that
+     the request is coming from a valid partner that has permission to use OpenAir API
+     
+     - Parameters:
+     - key: secret APIKey of your organisation.
+     - nameSpace: namespace of your organisation. By default value is *default*
+     - client: Name of your OpenAir client (could be anything)
+     - client_ver: Version of your OpenAir client (could be anything)
+     
+     - Note: Contact the OpenAir Support Department or your account representative to request API access.
+     **/
     public init(key: String,
          namespace: String = "deafult",
          client: String = "test app",

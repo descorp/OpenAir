@@ -8,197 +8,227 @@
 
 import Foundation
 
+let apiKey     = "MSC2kxYUFYkm7rJ8z50z"
+let apiManager = OpenairAPIManager(to: RequestConfiguration(key: apiKey))
+
+class State {
+    static var login: Login?
+    static var index = 0
+    static var userId: String?
+    static var timesheetId: String?
+    static var selectedProject: Project?
+    static var selectedTask: ProjectTask?
+    
+    static var projects: [Project]?
+    static var tasks = [Project: [ProjectTask]]()
+}
+
 class Openair {
     
-    // XML API constants
-    private static let apiKey        = "MSC2kxYUFYkm7rJ8z50z"
-    
-    let consoleIO = ConsoleIO()
-    let apiManager = OpenairAPIManager(to: RequestConfiguration(key: apiKey))
-    var index = 1
-    
     func interactiveMode() {
-        consoleIO.writeMessage("Welcome to OpenAir. This program enables you to submit your timesheets 🐣")
+        ConsoleIO.writeMessage("Welcome to OpenAir. This program enables you to submit your timesheets 🐣")
+        
         var shouldQuit = false
         while !shouldQuit {
-            consoleIO.writeMessage("📦  Type 'submit' to submit your timesheet for current week type 'q' to quit program.")
-            let (option, value) = consoleIO.getOption(option: consoleIO.getInput())
+            ConsoleIO.writeMessage("📦  Type 'submit' to submit your timesheet for current week type 'q' to quit program.")
+            let (option, value) = ConsoleIO.getOption(option: ConsoleIO.getInput())
             
             switch option {
             case .submit:
-                consoleIO.writeMessage("📛  Type your company name:")
-                let company = consoleIO.getInput()
-                consoleIO.writeMessage("👶  Type your user name:")
-                let userName = consoleIO.getInput()
-                let password = consoleIO.getInput(inputType: .password)
-                
-                //1- Authenticate user
-                self.consoleIO.writeMessage("👉  Authenticating user...")
-                let login = Login(login: userName, password: password, company: company)
-                apiManager.authenticateUser(login: login, callback: { (success, result) in
-                    self.consoleIO.writeMessage("✅  User Authenticated successfully")
-                    
-                    // Get start date of the current week
-                    let startDateOfWeek = Date().startOfWeek()
-                    
-                    // Get end date of the current week
-                    let endDateOfWeek = Date().endOfWeek()
-                    
-                    let userId = result
-                    
-                    //2- Check if timesheet already exist or not
-                    self.consoleIO.writeMessage("👉  Checking if timesheet exists...")
-                    self.apiManager.checkTimesheetExistsForDate(date: startDateOfWeek, login: login, callback: { (success, result) in
-                        if success {
-                            self.consoleIO.writeMessage("Hey, Sorry timesheet existed you cannot create one for this week")
-                        }
-                        else {
-                            self.consoleIO.writeMessage("✅  Done")
-
-                            //self.consoleIO.writeMessage("Creating new timesheet...")
-                            self.consoleIO.writeMessage("👉  Listing projects...")
-                            
-                            //3- Get list of project names
-                            self.apiManager.getProjects(login: login,  callback: { (success, result) in
-                                
-                                if success {
-                                    self.consoleIO.writeMessage("✅  Done")
-
-                                    // print each project name to console
-                                    let projects = result as? [Project]
-                                    if let projects = projects {
-                                        for (index, project) in projects.enumerated() {
-                                            self.consoleIO.writeMessage(String(index) + "." + project.picklist_label, to: .projects)
-                                        }
-                                        
-                                        self.consoleIO.writeMessage("👉  Now select project e.g. [0,1,2,33]...")
-                                        let projectId = self.consoleIO.getInput()
-                                        
-                                        // check if input is number
-                                        if self.IsNumber(input: projectId) {
-                                            if let projectId = Int(projectId), projectId < projects.count {
-                                                
-                                                //4- get project task
-                                                self.consoleIO.writeMessage("👉  Getting project tasks...")
-                                                self.apiManager.getprojectTasks(projectId: projects[projectId].id, login: login, callback: { (success, result) in
-                                                    
-                                                    if success {
-                                                        self.consoleIO.writeMessage("✅  Done")
-                                                        // print each project task to console
-
-                                                        if let projectTasks = result as? [ProjectTask] {
-                                                            for (index, projectTask) in projectTasks.enumerated() {
-                                                                self.consoleIO.writeMessage(String(index) + "." + (projectTask.name ?? "missingName"), to: .projectTasks)
-                                                            }
-                                                            
-                                                            self.consoleIO.writeMessage("👉  Now select project task...")
-                                                            let taskId = self.consoleIO.getInput()
-                                                            
-                                                            // check if input is number
-                                                            if self.IsNumber(input: taskId) {
-                                                                if let taskId = Int(taskId), taskId < projectTasks.count {
-                                                                    
-                                                                    // Ask user for working hours for every day per week
-                                                                    self.consoleIO.writeMessage("👉  Now enter timesheet work hour per day...")
-                                                                    
-                                                                    //let taskId = self.consoleIO.getInput()
-                                                                    let weekDaysWorkHours = self.getWorkHourForDay()
-                                                                    
-                                                                    self.consoleIO.writeMessage("🚀  creating timesheet...")
-                                                                    
-                                                                    //5- Add timesheet for current week
-                                                                    self.apiManager.addTimesheet(startDate: startDateOfWeek, endDate: endDateOfWeek, userId: userId as! String, login: login, callback: { (success, result) in
-                                                                        if success {
-                                                                            self.consoleIO.writeMessage("✅  Timesheet created successfully")
-                                                                                
-                                                                                let date = startDateOfWeek.add(days: self.index)
-                                                                                    
-                                                                                    //6- Add timesheet tasks, e.g. work hour per day
-                                                                                    self.addTaskToTimesheet(date: date, weekDaysWorkHours: weekDaysWorkHours, timesheetId: result as! String, projectId: projects[projectId].id , projectTaskId: projectTasks[taskId].id ?? "none", userId: userId as! String, login: login)
-                                                                                }
-                                                                        }
-                                                                    )
-                                                                }
-                                                            }
-                                                        }
-                                                        
-                                                    }
-                                                })
-                                                
-                                            }
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                else {
-                                    self.consoleIO.writeMessage("An error was encountered, no existing projects 🙁")
-                                }
-                            })
-                        }
-                    })
-                })
-                
+                if State.login == nil {
+                    StateMachine.goto(.getCredentials)
+                } else {
+                    StateMachine.goto(.checkTimesheet)
+                }
             case .quit:
                 shouldQuit = true
             default:
-                consoleIO.writeMessage("Unknown option \(value)", to: .error)
+                ConsoleIO.writeMessage("Unknown option \(value)", to: .error)
             }
         }
     }
     
     // MARK: Helper functions
     
-    func IsNumber(input: String) -> Bool {
+    static func IsNumber(input: String) -> Bool {
         return Int(input) != nil
     }
     
-    func getWorkHourForDay()-> [Int] {
-        var weekDaysWorkHours = [Int]()
+    static func getNumberImput(message: String, min: Int = 0, max: Int = Int.max) -> Int {
+        var isValid = false
+        var value = 0
         
-        for index in 0...4 {
-            self.consoleIO.writeMessage(DayOfWeek.at(number: index).description + ": ", to: .timesheetTasks)
-            let workHour = Int(self.consoleIO.getInput())
-            if workHour != nil {
-                if let workHour = workHour {
-                    weekDaysWorkHours.append(workHour)
-                }
-            }
-            else {
-                weekDaysWorkHours.append(0)
+        // check if input is number
+        while !isValid {
+            ConsoleIO.writeMessage(message)
+            let projectIdInput = ConsoleIO.getInput()
+            if IsNumber(input: projectIdInput), let id = Int(projectIdInput), id <= max, id >= min {
+                isValid = true
+                value = id - 1
             }
         }
-        return weekDaysWorkHours
+        
+        return value
     }
     
-    func addTaskToTimesheet(date: Date, weekDaysWorkHours: [Int], timesheetId: String, projectId: String, projectTaskId: String, userId: String, login: Login) {
+    enum StateMachine {
+        case getCredentials
+        case auth
+        case checkTimesheet
+        case createTimesheet
+        case getProjects
+        case selectProject
+        case getTasks
+        case selectTask
+        case addday
+        case submit
         
-        // add tasks to timesheet for 5 working days.
-        apiManager.addTaskToTimesheet(date: date, hours: weekDaysWorkHours[index-1], timesheetId: timesheetId, projectId: projectId, projectTaskId: projectTaskId, userId: userId, login: login) { (success, result) in
-            if success {
+        static func goto(_ state: StateMachine) {
+            switch state {
+            case .getCredentials:
+                ConsoleIO.writeMessage("📛  Type your company name:")
+                let company = ConsoleIO.getInput()
+                ConsoleIO.writeMessage("👶  Type your user name:")
+                let userName = ConsoleIO.getInput()
+                let password = ConsoleIO.getInput(inputType: .password)
                 
-                self.index = self.index + 1
-                
-                guard self.index < 6 else {
+                State.login = Login(login: userName, password: password, company: company)
+                goto(.auth)
+            case .auth:
+                ConsoleIO.writeMessage("👉  Authenticating user...")
+                apiManager.authenticateUser(login: State.login!) { (success, result) in
+                    guard success, let userId = result as? String else {
+                        ConsoleIO.writeMessage("🔐  User Authenticated unsuccessfully")
+                        State.login = nil
+                        goto(.getCredentials)
+                        return
+                    }
                     
-                    // save and submit timesheet
-                    print("Added 5 days tasks")
-                    self.apiManager.submitTimesheet(login: login, timesheetId: timesheetId, callback: { (success, result) in
-                        if success {
-                            print("All done! 🎉 timesheet submitted, Enjoy your weekend! 🚀")
-                        }
-                        else {
-                            print("An error was encountered, Cannot submit timesheet 🙁")
-                        }
-                    })
+                    State.userId = userId
+                    ConsoleIO.writeMessage("✅  User Authenticated successfully")
+                }
+            case .checkTimesheet:
+                ConsoleIO.writeMessage("🔍  Checking if timesheet exists...")
+                apiManager.checkTimesheetExistsForDate(date: Date().startOfWeek(), login: State.login!) { (success, result) in
+                    if success {
+                        ConsoleIO.writeMessage("⏱   Hey, looks like your timesheet for this week is already submited! Well done!")
+                        return
+                    }
+                    
+                    goto(.createTimesheet)
+                }
+            case .createTimesheet:
+                ConsoleIO.writeMessage("🚀   creating timesheet...")
+                let timesheet = Timesheet(starts: Date().startOfWeek(), ends: Date().endOfWeek(), userid: State.userId!)
+                apiManager.addTimesheet(timesheet: timesheet, login: State.login!) { (success, result) in
+                    guard success, let timesheetId = result as? String else {
+                        ConsoleIO.writeMessage("🙁   An error was encountered, not able to create new timesheet")
+                        return
+                    }
+                    
+                    ConsoleIO.writeMessage("✅   Timesheet created successfully")
+                    State.timesheetId = timesheetId
+                    goto(.selectProject)
+                }
+            case .getProjects:
+                ConsoleIO.writeMessage("👉   Getting projects...")
+                apiManager.getProjects(login: State.login!) { (success, result) in
+                    guard success, let projects = result as? [Project] else {
+                        ConsoleIO.writeMessage("🙁   An error was encountered, no existing projects")
+                        return
+                    }
+                    
+                    ConsoleIO.writeMessage("✅  Projects fetched successfully")
+                    State.projects = projects
+                    goto(.selectProject)
+                }
+            case .selectProject:
+                guard let projects = State.projects else {
+                    goto(.getProjects)
                     return
                 }
                 
-                self.consoleIO.writeMessage("Task added to timesheet...")
+                ConsoleIO.writeMessage("👉   Listing projects...")
+                for (index, projectLabel) in projects.flatMap({ $0.picklist_label }).enumerated() {
+                    ConsoleIO.writeMessage("\(String(index)). \(projectLabel)", to: .projects)
+                }
                 
-                self.addTaskToTimesheet(date: Date().add(days: self.index), weekDaysWorkHours: weekDaysWorkHours, timesheetId: timesheetId, projectId: projectId, projectTaskId: projectTaskId, userId: userId, login: login)
+                let message = "👉   Now select project e.g. select a number from 1 to \(projects.count)"
+                let projectIndex = getNumberImput(message: message, max: projects.count)
+                State.selectedProject = projects[projectIndex]
+                
+                goto(.selectTask)
+            case .getTasks:
+                ConsoleIO.writeMessage("👉   Getting project tasks...")
+                apiManager.getprojectTasks(projectId: State.selectedProject!.id, login: State.login!) { (success, result) in
+                    guard success, let projectTasks = result as? [ProjectTask] else {
+                        ConsoleIO.writeMessage("🙁   An error was encountered, not able to fetch tasks")
+                        return
+                    }
+                    
+                    ConsoleIO.writeMessage("✅   Tasks fetched successfully")
+                    State.tasks[State.selectedProject!] = projectTasks
+                    goto(.selectTask)
+                }
+            case .selectTask:
+                guard let projectTasks = State.tasks[State.selectedProject!] else {
+                    goto(.getTasks)
+                    return
+                }
+                
+                ConsoleIO.writeMessage("👉   Listing project tasks...")
+                // print each project task to console
+                for (index, projectTaskName) in projectTasks.flatMap({ $0.name }).enumerated() {
+                    ConsoleIO.writeMessage("\(String(index)). \(projectTaskName)", to: .projectTasks)
+                }
+                
+                let message = "👉   Now select project task e.g. select a number from 1 to \(projectTasks.count)"
+                let taskIndex = getNumberImput(message: message, max: projectTasks.count)
+                
+                State.selectedTask = projectTasks[taskIndex]
+                goto(.addday)
+            case .addday:
+                ConsoleIO.writeMessage("👉   Now enter number of hour (between 0 and 12) or anything else to select another project")
+                ConsoleIO.writeMessage("\(DayOfWeek.at(number: State.index).name): ", to: .timesheetTasks)
+                
+                let hoursInput = ConsoleIO.getInput()
+                guard IsNumber(input: hoursInput), let hours = Int(hoursInput), hours <= 12, hours >= 1 else {
+                    goto(.selectProject)
+                    return
+                }
+                
+                let date = Date().startOfWeek().add(days: State.index)
+                let task = Task(date: date,
+                                hours: hours,
+                                timesheetid: State.timesheetId!,
+                                userid: State.userId!,
+                                projectid: State.selectedProject!.id,
+                                projecttaskid: State.selectedTask!.id!)
+                
+                apiManager.addTaskToTimesheet(task: task, login: State.login!) { (success, result) in
+                    guard success else {
+                        print("🙁   An error was encountered, cannot add task to timesheet")
+                        return
+                    }
+                    
+                    State.index += 1
+                    
+                    if State.index < 4 {
+                        goto(.addday)
+                    }
+                    goto(.submit)
+                }
+            case .submit:
+                apiManager.submitTimesheet(login: State.login!, timesheetId: State.timesheetId!) { (success, result) in
+                    if success {
+                        print("🎉   All done! Timesheet submitted, Enjoy your weekend! 🚀")
+                        return
+                    }
+                    
+                    print("🙁   An error was encountered, cannot submit timesheet")
+                }
             }
         }
     }
 }
+

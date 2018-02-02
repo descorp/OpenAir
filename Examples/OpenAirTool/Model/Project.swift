@@ -8,7 +8,16 @@
 
 import Foundation
 
-public class Project {
+public class Project: Hashable {
+    
+    public var hashValue: Int {
+        return id.hashValue
+    }
+    
+    public static func ==(lhs: Project, rhs: Project) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     public let id: String
     public let picklist_label: String
     

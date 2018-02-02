@@ -17,7 +17,7 @@ public enum DayOfWeek: Int {
     case Sat = 5
     case Sun = 6
     
-    public var description: String {
+    public var name: String {
         get {
             return DayOfWeek.names[self]!
         }
