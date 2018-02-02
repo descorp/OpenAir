@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class User: OpenAirDTO {
+open class User: OpenAirOutgoingDTO {
     let id: String
     let name: String
     

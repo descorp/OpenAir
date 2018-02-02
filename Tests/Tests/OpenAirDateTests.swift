@@ -23,7 +23,7 @@ class OpenAirDateTests: QuickSpec {
         describe("OpenAir Date DTO object") {
             it("can be created from Date") {
                 let date = Date()
-                let sut = OpenAirDate(from: date)
+                let sut = DateTime(from: date)
                 
                 expect(sut.year).to(equal(date.year))
                 expect(sut.month).to(equal(date.month))
@@ -41,7 +41,7 @@ class OpenAirDateTests: QuickSpec {
                 let minute = 44
                 let second = 55
                 
-                let sut = OpenAirDate(year: year,
+                let sut = DateTime(year: year,
                                       month: month,
                                       day: day,
                                       hour: hour,
@@ -58,7 +58,7 @@ class OpenAirDateTests: QuickSpec {
             
             it("can be represented as xml") {
                 let date = Date()
-                let sut = OpenAirDate(from: date)
+                let sut = DateTime(from: date)
                 
                 let actual =
                 """
@@ -72,7 +72,7 @@ class OpenAirDateTests: QuickSpec {
                 </Date>
                 """
                 
-                expect(sut.xml.minifyedXml).to(equal(actual.minifyedXml))
+                expect(sut.xml.minifiedXml).to(equal(actual.minifiedXml))
             }
             
             it("can be represented as aprtial xml") {
@@ -81,7 +81,7 @@ class OpenAirDateTests: QuickSpec {
                 let day = 30
                 let hour = 12
                 
-                let sut = OpenAirDate(year: year,
+                let sut = DateTime(year: year,
                                       month: month,
                                       day: day,
                                       hour: hour)
@@ -96,7 +96,7 @@ class OpenAirDateTests: QuickSpec {
                 </Date>
                 """
                 
-                expect(sut.xml.minifyedXml).to(equal(actual.minifyedXml))
+                expect(sut.xml.minifiedXml).to(equal(actual.minifiedXml))
             }
         }
     }

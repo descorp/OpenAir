@@ -6,33 +6,21 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-let OPEN_AIR_URL = "https://www.openair.com/api.pl"
-
-public typealias OpenairAPIManagerCompletionHandler = (_ success: Bool, _ result: Any?) -> ()
-
 import Foundation
+import PromiseKit
 
-public protocol Responce {
-    var origine: Command { get }
-    var content: [String: Any] { get }
-}
-
-public protocol Promise {
-    var responces: [Responce] { get }
-}
-
-private class PromiseClass: Promise {
-    var responces = [Responce]()
+public enum OpenAirError: Error {
+    case urlError
+    case payloadError
+    case parsingError
 }
 
 /** This class manage all XML API requests to OpenAir **/
 public class OpenairAPIManager: NSObject {
     
-    // XML API constants
-    let netSuitServerBaseURL: String
-    let builder: RequestBuilder
-    
-    private var session = URLSession.shared
+    let builder: PayloadBuilderType
+    let xmlParser: XMLParserType
+    let api: APIAccessProviderType
     
     /**
      
@@ -47,7 +35,8 @@ public class OpenairAPIManager: NSObject {
      **/
     public init(with config: RequestConfiguration, byUrl address: String) {
         self.builder = RequestBuilder(for: config)
-        self.netSuitServerBaseURL = address
+        self.api = APIAccessProvider(url: address)
+        self.xmlParser = XMLParser()
     }
     
     /**
@@ -62,32 +51,19 @@ public class OpenairAPIManager: NSObject {
      - nameSpace: namespace of your organisation. By default value is *default*
      **/
     public convenience init(with config: RequestConfiguration) {
-        self.init(with: config, byUrl: OPEN_AIR_URL)
+        self.init(with: config)
     }
     
-    public func request(_ commands: Command...) -> Promise {
+    public func request(_ commands: Command...) -> Promise<Responce> {
         let xml = builder.create(commands as [Command])
-        
-        if let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-            sendRequest(requestPayload: payload)
-        }
-        
-        return PromiseClass()
-    }
-    
-    func sendRequest(requestPayload: Data) {
-        
-        guard let url = URL(string: netSuitServerBaseURL) else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = requestPayload
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                
+        return api.request(payload: xml).then{ [weak self] responeBody in
+            
+            guard let strongSelf = self else {
+                return Promise<Responce>(error: OpenAirError.urlError)
             }
+            
+            return strongSelf.xmlParser.parse(xml: responeBody)
         }
-        task.resume()
     }
 }
 

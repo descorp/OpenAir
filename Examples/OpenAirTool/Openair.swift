@@ -11,16 +11,22 @@ import Foundation
 let apiKey     = "MSC2kxYUFYkm7rJ8z50z"
 let apiManager = OpenairAPIManager(to: RequestConfiguration(key: apiKey))
 
+extension String {
+    public var isNumber: Bool {
+        return Int(self) != nil
+    }
+}
+
 class State {
     static var login: Login?
     static var index = 0
     static var userId: String?
     static var timesheetId: String?
     static var selectedProject: Project?
-    static var selectedTask: ProjectTask?
+    static var selectedTask: (id: String, name: String)?
     
     static var projects: [Project]?
-    static var tasks = [Project: [ProjectTask]]()
+    static var tasks = [Project: [(id: String, name: String)]]()
 }
 
 class Openair {
@@ -50,10 +56,6 @@ class Openair {
     
     // MARK: Helper functions
     
-    static func IsNumber(input: String) -> Bool {
-        return Int(input) != nil
-    }
-    
     static func getNumberImput(message: String, min: Int = 0, max: Int = Int.max) -> Int {
         var isValid = false
         var value = 0
@@ -62,7 +64,7 @@ class Openair {
         while !isValid {
             ConsoleIO.writeMessage(message)
             let projectIdInput = ConsoleIO.getInput()
-            if IsNumber(input: projectIdInput), let id = Int(projectIdInput), id <= max, id >= min {
+            if projectIdInput.isNumber, let id = Int(projectIdInput), id <= max, id >= min {
                 isValid = true
                 value = id - 1
             }
@@ -97,7 +99,10 @@ class Openair {
             case .auth:
                 ConsoleIO.writeMessage("👉  Authenticating user...")
                 apiManager.authenticateUser(login: State.login!) { (success, result) in
-                    guard success, let userId = result as? String else {
+                    guard
+                        success,
+                        let userId = result as? String
+                    else {
                         ConsoleIO.writeMessage("🔐  User Authenticated unsuccessfully")
                         State.login = nil
                         goto(.getCredentials)
@@ -106,6 +111,7 @@ class Openair {
                     
                     State.userId = userId
                     ConsoleIO.writeMessage("✅  User Authenticated successfully")
+                    goto(.checkTimesheet)
                 }
             case .checkTimesheet:
                 ConsoleIO.writeMessage("🔍  Checking if timesheet exists...")
@@ -121,7 +127,10 @@ class Openair {
                 ConsoleIO.writeMessage("🚀   creating timesheet...")
                 let timesheet = Timesheet(starts: Date().startOfWeek(), ends: Date().endOfWeek(), userid: State.userId!)
                 apiManager.addTimesheet(timesheet: timesheet, login: State.login!) { (success, result) in
-                    guard success, let timesheetId = result as? String else {
+                    guard
+                        success,
+                        let timesheetId = result as? String
+                    else {
                         ConsoleIO.writeMessage("🙁   An error was encountered, not able to create new timesheet")
                         return
                     }
@@ -133,7 +142,10 @@ class Openair {
             case .getProjects:
                 ConsoleIO.writeMessage("👉   Getting projects...")
                 apiManager.getProjects(login: State.login!) { (success, result) in
-                    guard success, let projects = result as? [Project] else {
+                    guard
+                        success,
+                        let projects = result as? [Project]
+                    else {
                         ConsoleIO.writeMessage("🙁   An error was encountered, no existing projects")
                         return
                     }
@@ -143,7 +155,9 @@ class Openair {
                     goto(.selectProject)
                 }
             case .selectProject:
-                guard let projects = State.projects else {
+                guard
+                    let projects = State.projects
+                else {
                     goto(.getProjects)
                     return
                 }
@@ -161,7 +175,10 @@ class Openair {
             case .getTasks:
                 ConsoleIO.writeMessage("👉   Getting project tasks...")
                 apiManager.getprojectTasks(projectId: State.selectedProject!.id, login: State.login!) { (success, result) in
-                    guard success, let projectTasks = result as? [ProjectTask] else {
+                    guard
+                        success,
+                        let projectTasks = result as? [(id: String, name: String)]
+                    else {
                         ConsoleIO.writeMessage("🙁   An error was encountered, not able to fetch tasks")
                         return
                     }
@@ -171,7 +188,9 @@ class Openair {
                     goto(.selectTask)
                 }
             case .selectTask:
-                guard let projectTasks = State.tasks[State.selectedProject!] else {
+                guard
+                    let projectTasks = State.tasks[State.selectedProject!]
+                else {
                     goto(.getTasks)
                     return
                 }
@@ -192,7 +211,12 @@ class Openair {
                 ConsoleIO.writeMessage("\(DayOfWeek.at(number: State.index).name): ", to: .timesheetTasks)
                 
                 let hoursInput = ConsoleIO.getInput()
-                guard IsNumber(input: hoursInput), let hours = Int(hoursInput), hours <= 12, hours >= 1 else {
+                guard
+                    hoursInput.isNumber,
+                    let hours = Int(hoursInput),
+                    hours <= 12,
+                    hours >= 1
+                else {
                     goto(.selectProject)
                     return
                 }
@@ -203,7 +227,7 @@ class Openair {
                                 timesheetid: State.timesheetId!,
                                 userid: State.userId!,
                                 projectid: State.selectedProject!.id,
-                                projecttaskid: State.selectedTask!.id!)
+                                projecttaskid: State.selectedTask!.id)
                 
                 apiManager.addTaskToTimesheet(task: task, login: State.login!) { (success, result) in
                     guard success else {

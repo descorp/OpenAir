@@ -37,7 +37,7 @@ public class OpenairAPIManager: NSObject {
     var projects: [Project]?
     var projectName: String = ""
     var projectId: String = ""
-    var tasks: [ProjectTask]?
+    var tasks: [(id: String, name: String)]?
     var projectTask: String = ""
     var projectTaskName: String = ""
     var projectTaskId: String = ""
@@ -80,7 +80,7 @@ public class OpenairAPIManager: NSObject {
     
     public func checkTimesheetExistsForDate(date: Date, login: Login, callback: @escaping OpenairAPIManagerCompletionHandler) {
         
-        let date = OpenAirDate(year: date.year, month: date.month, day: date.day)
+        let date = DateTime(year: date.year, month: date.month, day: date.day)
         let xml = builder.create(.auth(login: login),
                                      .read(dataType: "Timesheet",
                                            body: [date],
@@ -258,7 +258,7 @@ extension OpenairAPIManager: XMLParserDelegate {
             else {
                 if elementName == "name" {
                     // found project task
-                    let projectTask = ProjectTask(id: projectTaskId, name: projectTaskName)
+                    let projectTask = (id: projectTaskId, name: projectTaskName)
                     tasks?.append(projectTask)
 
                     projectTaskName = ""

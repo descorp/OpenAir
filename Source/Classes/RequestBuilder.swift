@@ -8,12 +8,6 @@
 
 import Foundation
 
-public protocol PayloadBuilderType {
-    func create(command: Command) -> String
-    func create(_ commands: Command...) -> String
-    func create(_ commands: [Command]) -> String
-}
-
 public struct RequestBuilder: PayloadBuilderType {
     
     static let Header = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
@@ -32,7 +26,7 @@ public struct RequestBuilder: PayloadBuilderType {
         \(command.xml)
         \(request.xmlFooter)
         """
-        return requestContent.minifyedXml
+        return requestContent.minifiedXml
     }
     
     public func create(_ commands: [Command]) -> String {
@@ -47,7 +41,7 @@ public struct RequestBuilder: PayloadBuilderType {
         \(commandsContent)
         \(request.xmlFooter)
         """
-        return requestContent.minifyedXml
+        return requestContent.minifiedXml
     }
     
     public func create(_ commands: Command...) -> String {
