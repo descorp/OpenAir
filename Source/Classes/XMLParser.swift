@@ -10,12 +10,51 @@ import Foundation
 import SwiftyXMLParser
 import PromiseKit
 
-struct XMLParser: XMLParserType {
+struct OpenAirXMLParser: XMLParserType {
+    
     func isValid(xml: String) -> Bool {
-        return xml.st
+        guard
+            !xml.isEmpty,
+            xml.first == Character("<"),
+            xml.last == Character(">"),
+            xml.isBracketsInbalance
+        else {
+            return false
+        }
+        
+        return true
     }
     
-    func parse<T>(xml: String) -> Promise<T> {
-        return Promise<T>.init(error: OpenAirError.parsingError)
+    func parse(xml: String) -> Promise<Responce> {
+        return Promise<Responce>(error: OpenAirError.requestParsingError)
+    }
+}
+
+fileprivate extension String {
+    
+    var isBracketsInbalance: Bool {
+        var bracketsStack = [String]()
+        for charecter in self {
+            let char = charecter.description
+            switch char {
+            case "\"":
+                if bracketsStack.last == char {
+                    bracketsStack.popLast()
+                } else {
+                    fallthrough
+                }
+            case "<":
+                bracketsStack.append(char)
+            case ">":
+                if bracketsStack.last == "<" {
+                    bracketsStack.popLast()
+                } else {
+                    return false
+                }
+            default:
+                break
+            }
+        }
+        return bracketsStack.isEmpty
     }
 }

@@ -12,7 +12,8 @@ import PromiseKit
 public enum OpenAirError: Error {
     case urlError
     case payloadError
-    case parsingError
+    case requestParsingError
+    case responceParsingError
 }
 
 /** This class manage all XML API requests to OpenAir **/
@@ -36,7 +37,7 @@ public class OpenairAPIManager: NSObject {
     public init(with config: RequestConfiguration, byUrl address: String) {
         self.builder = RequestBuilder(for: config)
         self.api = APIAccessProvider(url: address)
-        self.xmlParser = XMLParser()
+        self.xmlParser = OpenAirXMLParser()
     }
     
     /**
