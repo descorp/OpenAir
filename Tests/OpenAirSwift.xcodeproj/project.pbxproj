@@ -85,6 +85,10 @@
 		40B7210320248F15006B0F38 /* OpenAirDTOProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31DA2018ACBA00C52350 /* OpenAirDTOProtocols.swift */; };
 		40B7210420248F3F006B0F38 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E31D8201893FC00C52350 /* RequestBuilder.swift */; };
 		40B7210520248F43006B0F38 /* PayloadBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */; };
+		40B7210920249AD8006B0F38 /* XMLParserValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B72107202499E6006B0F38 /* XMLParserValidationTests.swift */; };
+		40B7210A20249AD9006B0F38 /* XMLParserValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B72107202499E6006B0F38 /* XMLParserValidationTests.swift */; };
+		40B7210D2024BE7C006B0F38 /* XMLParserParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B7210B2024BE51006B0F38 /* XMLParserParsingTests.swift */; };
+		40B7210E2024BE7C006B0F38 /* XMLParserParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B7210B2024BE51006B0F38 /* XMLParserParsingTests.swift */; };
 		40C088E5201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E6201F6258007B3935 /* OpenAirDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E4201F6258007B3935 /* OpenAirDateTests.swift */; };
 		40C088E8202069E7007B3935 /* TimesheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C088E7202069E7007B3935 /* TimesheetTests.swift */; };
@@ -171,6 +175,8 @@
 		40B720EA20247241006B0F38 /* XMLParserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserType.swift; sourceTree = "<group>"; };
 		40B720EC202472CD006B0F38 /* APIAccessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAccessProvider.swift; sourceTree = "<group>"; };
 		40B720EE20247453006B0F38 /* OpenAirAPIAccessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirAPIAccessProvider.swift; sourceTree = "<group>"; };
+		40B72107202499E6006B0F38 /* XMLParserValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserValidationTests.swift; sourceTree = "<group>"; };
+		40B7210B2024BE51006B0F38 /* XMLParserParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserParsingTests.swift; sourceTree = "<group>"; };
 		40BF2A1A200F827900DE2191 /* OpenAirSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenAirSwift.podspec; sourceTree = "<group>"; };
 		40C088E4201F6258007B3935 /* OpenAirDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAirDateTests.swift; sourceTree = "<group>"; };
 		40C088E7202069E7007B3935 /* TimesheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesheetTests.swift; sourceTree = "<group>"; };
@@ -262,6 +268,7 @@
 		400E320C201F1C5700C52350 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				400E3206201A243F00C52350 /* CommandImplementation.swift */,
 				40737A772020B5EC00EAA3C5 /* DayOfWeek.swift */,
 				400E3209201AA05E00C52350 /* OpenAirOutgoingDTO+Utillities.swift */,
 				40F829A120161D5000840651 /* DateExtensions.swift */,
@@ -312,6 +319,15 @@
 			path = Abstracts;
 			sourceTree = "<group>";
 		};
+		40B72106202499CF006B0F38 /* XMLParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				40B72107202499E6006B0F38 /* XMLParserValidationTests.swift */,
+				40B7210B2024BE51006B0F38 /* XMLParserParsingTests.swift */,
+			);
+			name = XMLParserTests;
+			sourceTree = "<group>";
+		};
 		40C088E3201F6239007B3935 /* OpenAirDTOTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,7 +353,6 @@
 				40F829A520161D6800840651 /* Model */,
 				400E31D8201893FC00C52350 /* RequestBuilder.swift */,
 				400E31FF201A23BC00C52350 /* CommandInterface.swift */,
-				400E3206201A243F00C52350 /* CommandImplementation.swift */,
 				407F840020236EEA005278BB /* OpenAirManager.swift */,
 				40B720DF20246829006B0F38 /* XMLParser.swift */,
 				40B720EE20247453006B0F38 /* OpenAirAPIAccessProvider.swift */,
@@ -389,6 +404,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				40B72106202499CF006B0F38 /* XMLParserTests */,
 				40C088EA20206A57007B3935 /* UtilitiesTests */,
 				40C088E3201F6239007B3935 /* OpenAirDTOTests */,
 				400E31EC201A042C00C52350 /* RequestBuilderTests */,
@@ -905,7 +921,9 @@
 				400E31F4201A085100C52350 /* RequestBuilderCanAddTimesheetsTestsSpec.swift in Sources */,
 				40C088EC20206A68007B3935 /* DateExtensionsTests.swift in Sources */,
 				400E31F1201A07CC00C52350 /* RequestBuilderCanGetSpecificTimesheetsTestsSpec.swift in Sources */,
+				40B7210E2024BE7C006B0F38 /* XMLParserParsingTests.swift in Sources */,
 				400E31EE201A047A00C52350 /* RequestBuilderCanAuthenticateTestsSpec.swift in Sources */,
+				40B7210A20249AD9006B0F38 /* XMLParserValidationTests.swift in Sources */,
 				40F829E4201625FE00840651 /* RequestBuilderCanAddTaskToTimesheetsTestsSpec.swift in Sources */,
 				400E31FA201A09C100C52350 /* RequestBuilderCanGetProjectsTasksTestsSpec.swift in Sources */,
 			);
@@ -952,7 +970,9 @@
 				400E31F5201A085100C52350 /* RequestBuilderCanAddTimesheetsTestsSpec.swift in Sources */,
 				40C088ED20206A68007B3935 /* DateExtensionsTests.swift in Sources */,
 				400E31F2201A07CC00C52350 /* RequestBuilderCanGetSpecificTimesheetsTestsSpec.swift in Sources */,
+				40B7210D2024BE7C006B0F38 /* XMLParserParsingTests.swift in Sources */,
 				400E31EF201A047A00C52350 /* RequestBuilderCanAuthenticateTestsSpec.swift in Sources */,
+				40B7210920249AD8006B0F38 /* XMLParserValidationTests.swift in Sources */,
 				40F829E5201625FF00840651 /* RequestBuilderCanAddTaskToTimesheetsTestsSpec.swift in Sources */,
 				400E31FB201A09C100C52350 /* RequestBuilderCanGetProjectsTasksTestsSpec.swift in Sources */,
 			);
