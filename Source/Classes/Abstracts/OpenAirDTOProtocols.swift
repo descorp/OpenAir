@@ -8,12 +8,15 @@
 
 import Foundation
 
-public protocol OpenAirOutgoingDTO: class {
-    static var datatype: String { get }
+public protocol XMLSerialisable {
     var xml: String { get }
+}
+
+public protocol OpenAirOutgoingDTO: class, XMLSerialisable {
+    static var datatype: String { get }
 }
 
 public protocol OpenAirIncomingDTO: class {
     static var datatype: String { get }
-    var xml: String { get }
+    init(dict: [String: Any])
 }

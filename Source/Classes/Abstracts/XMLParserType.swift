@@ -10,6 +10,6 @@ import Foundation
 import PromiseKit
 
 protocol XMLParserType {
-    func parse<T>(xml: String) -> Promise<T>
+    func parse(xml: String) -> Promise<Responce>
     func isValid(xml: String) -> Bool
 }
