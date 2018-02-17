@@ -1,0 +1,21 @@
+use_frameworks!
+
+target 'OpenAirSwift_iOS' do
+    pod "PromiseKit", "~> 4.4"
+    pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+end
+
+target 'OpenAirSwift_Mac' do
+    pod "PromiseKit", "~> 4.4"
+    pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
+end
+
+target 'OpenAirSwift_iOSTests' do
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0.2'
+end
+
+target 'OpenAirSwift_MacTests' do
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0.2'
+end
