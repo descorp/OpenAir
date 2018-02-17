@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class DateTime: OpenAirOutgoingDTO {
+public class DateTime: XmlEncodable, Decodable {
     
     let year: Int?
     let month: Int?

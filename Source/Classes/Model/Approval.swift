@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Approval: OpenAirOutgoingDTO {
+public class Approval: XmlEncodable {
     let cc: String
     let note: String
     

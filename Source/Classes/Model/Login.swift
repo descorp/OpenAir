@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Login: OpenAirOutgoingDTO {
+public class Login: XmlEncodable {
     let user: String
     let password: String
     let company: String

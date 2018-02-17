@@ -9,13 +9,7 @@
 import Foundation
 import Quick
 import Nimble
-
-#if os(iOS)
-    @testable import OpenAirSwift_iOS
-#else
-    @testable import OpenAirSwift_Mac
-#endif
-
+@testable import Onboarding
 
 class RequestBuilderCanAuthenticateTestsSpec: QuickSpec {
 
@@ -40,7 +34,10 @@ class RequestBuilderCanAuthenticateTestsSpec: QuickSpec {
                 let limit = 1
                 
                 let login = Login(login: userName, password: password, company: company)
-                let request = requestBuilder.create(.auth(login: login), .readSimple(dataType: datatype, attributes: [.method(.all), .limit(limit)]))
+                let request = requestBuilder.create(.auth(login: login),
+                                                    .read(dataType: datatype,
+                                                          body: [],
+                                                          attributes: [.method(.all), .limit(limit)]))
                 
                 let actual =
                 """

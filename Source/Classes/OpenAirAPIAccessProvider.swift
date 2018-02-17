@@ -12,29 +12,31 @@ import PromiseKit
 let OPEN_AIR_URL = "https://www.openair.com/api.pl"
 
 public struct APIAccessProvider :  APIAccessProviderType {
-    
-    private var session = URLSession.shared
-    let netSuitServerBaseURL: String
+    private let HttpMethod = "POST"
+    private let session = URLSession.shared
+    let baseURL: String
     
     init() {
         self.init(url: OPEN_AIR_URL)
     }
     
     public init(url: String) {
-        netSuitServerBaseURL = url
+        baseURL = url
     }
     
     public func request(payload xml: String) -> Promise<String> {
-        guard let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false) else {
-            return Promise<String>(error: OpenAirError.payloadError)
+        guard
+            let payload = xml.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        else {
+            return Promise<String>(error: OpenAirError.payloadGenerationError)
         }
         
-        guard let url = URL(string: netSuitServerBaseURL) else {
+        guard let url = URL(string: baseURL) else {
             return Promise<String>(error: OpenAirError.urlError)
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = HttpMethod
         request.httpBody = payload
         
         return session.dataTask(with: request).asString()

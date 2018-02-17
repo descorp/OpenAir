@@ -8,15 +8,9 @@
 
 import Foundation
 
-public protocol XMLSerialisable {
+/// Class that could be converter to XML
+public protocol XmlEncodable: class {
+    static var datatype: String { get }
     var xml: String { get }
 }
 
-public protocol OpenAirOutgoingDTO: class, XMLSerialisable {
-    static var datatype: String { get }
-}
-
-public protocol OpenAirIncomingDTO: class {
-    static var datatype: String { get }
-    init(dict: [String: Any])
-}

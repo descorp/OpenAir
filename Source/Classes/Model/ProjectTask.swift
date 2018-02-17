@@ -9,7 +9,7 @@
 
 import Foundation
 
-public class ProjectTask: OpenAirOutgoingDTO {
+public class ProjectTask: XmlEncodable {
     public static var datatype: String = "Projecttask"
     
     public let projectid: String?

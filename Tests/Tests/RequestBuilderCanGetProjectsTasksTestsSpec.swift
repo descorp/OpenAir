@@ -9,12 +9,7 @@
 import Foundation
 import Quick
 import Nimble
-
-#if os(iOS)
-    @testable import OpenAirSwift_iOS
-#else
-    @testable import OpenAirSwift_Mac
-#endif
+@testable import Onboarding
 
 class RequestBuilderCanGetProjectsTasksTestsSpec: QuickSpec {
     
@@ -40,7 +35,9 @@ class RequestBuilderCanGetProjectsTasksTestsSpec: QuickSpec {
                 let login = Login(login: userName, password: password, company: company)
                 let projectTask = ProjectTask(projectId: projectId)
                 let request = requestBuilder.create(.auth(login: login),
-                                                    .readObject(data: projectTask, attributes: [.method(.equalTo),.limit(limit)]))
+                                                    .read(dataType: "Projecttask",
+                                                          body: [projectTask],
+                                                          attributes: [.method(.equalTo),.limit(limit)]))
                 
                 let actual =
                 """
