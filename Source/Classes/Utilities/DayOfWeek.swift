@@ -29,13 +29,13 @@ public enum DayOfWeek: Int {
         }
     }
     
-    private static let names = [DayOfWeek.Mon: "Monday",
-                                DayOfWeek.Tue: "Tuesday",
-                                DayOfWeek.Wed: "Wednesday",
-                                DayOfWeek.Thu: "Thursday",
-                                DayOfWeek.Fri: "Friday",
-                                DayOfWeek.Sat: "Saturday",
-                                DayOfWeek.Sun: "Sunday" ]
+    private static let names = [DayOfWeek.Mon: NSLocalizedString("Monday", comment: "Monday"),
+                                DayOfWeek.Tue: NSLocalizedString("Tuesday", comment: "Tuesday"),
+                                DayOfWeek.Wed: NSLocalizedString("Wednesday", comment: "Wednesday"),
+                                DayOfWeek.Thu: NSLocalizedString("Thursday", comment: "Thursday"),
+                                DayOfWeek.Fri: NSLocalizedString("Friday", comment: "Friday"),
+                                DayOfWeek.Sat: NSLocalizedString("Saturday", comment: "Saturday"),
+                                DayOfWeek.Sun: NSLocalizedString("Sunday", comment: "Sunday") ]
     
     public static func at(number: Int) -> DayOfWeek {
         return DayOfWeek.init(rawValue: number % 7)!

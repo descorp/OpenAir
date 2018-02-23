@@ -19,7 +19,8 @@ func unwrap<T>(_ any: T) -> Any {
 public extension XmlEncodable {
     
     static var datatype: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
+        let str = "\(type(of: Self.self))".components(separatedBy: ".").first!
+        return str
     }
     
     var xml: String {

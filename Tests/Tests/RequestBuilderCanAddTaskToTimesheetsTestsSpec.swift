@@ -3,7 +3,11 @@
 import Foundation
 import Quick
 import Nimble
-@testable import Onboarding
+#if os(iOS)
+    @testable import OpenAirSwift_iOS
+#else
+    @testable import OpenAirSwift_Mac
+#endif
 
 class RequestBuilderCanAddTaskToTimesheetsTestsSpec: QuickSpec {
 
@@ -30,7 +34,7 @@ class RequestBuilderCanAddTaskToTimesheetsTestsSpec: QuickSpec {
                 let projectId = "projectId"
                 let projectTaskId = "projectTaskId"
                 
-                let login = Login(login: userName, password: password, company: company)
+                let login = Login(user: userName, password: password, company: company)
                 let task = Task(date: date, hours: hours, timesheetid: timesheetId, userid: userId, projectid: projectId, projecttaskid: projectTaskId)
                 let request = requestBuilder.create(.auth(login: login), .add(task))
                 

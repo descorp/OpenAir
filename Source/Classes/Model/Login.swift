@@ -8,14 +8,9 @@
 
 import Foundation
 
-public class Login: XmlEncodable {
+public struct Login: XmlEncodable {
+    
     let user: String
     let password: String
     let company: String
-    
-    public init(login: String, password: String, company: String) {
-        self.user = login
-        self.password = password
-        self.company = company
-    }
 }

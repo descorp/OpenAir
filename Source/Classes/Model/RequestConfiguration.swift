@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class RequestConfiguration {
+public struct RequestConfiguration {
     let API_version="1.0"
     let client_ver: String
     let client: String

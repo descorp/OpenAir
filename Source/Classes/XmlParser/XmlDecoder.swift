@@ -92,8 +92,15 @@ private struct XmlKeyedDecodingContainer<Key: CodingKey>: KeyedDecodingContainer
     /// - returns: Whether the encountered value was null.
     /// - throws: `DecodingError.keyNotFound` if `self` does not have an entry for the given key.
     func decodeNil(forKey key: Key) throws -> Bool {
-        let node = xmlNodes[key.stringValue]
-        return node == nil && node!.text == nil && node!.childElements.isEmpty
+        guard
+            let node = xmlNodes[key.stringValue]
+            else {
+                throw DecodingError.keyNotFound(
+                    key, DecodingError.Context(codingPath: [key],
+                                               debugDescription: "Field \(key.stringValue) not found"))
+        }
+        
+        return node.text == nil && node.childElements.isEmpty
     }
     
     /// Decodes a value of the given type for the given key.
@@ -132,11 +139,19 @@ private struct XmlKeyedDecodingContainer<Key: CodingKey>: KeyedDecodingContainer
             let subNode = xmlNodes[key.stringValue]
         else {
             throw DecodingError.keyNotFound(
-                key,
-                DecodingError.Context(codingPath: [key], debugDescription: "Field \(key.stringValue) not found"))
+                key, DecodingError.Context(codingPath: [key],
+                                           debugDescription: "Field \(key.stringValue) not found"))
         }
         
-        return try T(from: XmlDecoder(node: subNode))
+        guard
+            subNode.childElements.count == 1,
+            let dataElement = subNode.childElements.first
+        else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [key],
+                                                                    debugDescription: "Failed to decode \(key.stringValue)"))
+        }
+        
+        return try T(from: XmlDecoder(node: dataElement))
     }
     
     /// Returns the data stored for the given key as represented in a container keyed by the given key type.

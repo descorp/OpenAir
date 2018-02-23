@@ -9,7 +9,11 @@
 import Foundation
 import Quick
 import Nimble
-@testable import Onboarding
+#if os(iOS)
+    @testable import OpenAirSwift_iOS
+#else
+    @testable import OpenAirSwift_Mac
+#endif
 
 class XMLParserParsingTests: QuickSpec {
     
@@ -18,7 +22,7 @@ class XMLParserParsingTests: QuickSpec {
         describe("Testing XMLParer's parsing capabilities") {
             
             let limit = 1
-            let login = Login(login: "login", password: "password", company: "company")
+            let login = Login(user: "login", password: "password", company: "company")
             let commands: [Command] = [.auth(login: login),
                                        .read(dataType: "User",
                                              body: [],
@@ -107,8 +111,30 @@ class XMLParserParsingTests: QuickSpec {
                 expect(result.responces[1].content).toEventuallyNot(beEmpty())
                 expect(result.responces[1].content!.count).toEventuallyNot(equal(44))
                 
-                let projects: [Project] = try! result.responces[1].getCollection()()
+                let projects: [Project] = try! result.responces[1].getCollection()
                 expect(projects).toEventuallyNot(beNil())
+                expect(projects[0]).toEventuallyNot(beNil())
+                expect(projects[0].name).toEventually(equal("Administrative"))
+            }
+            
+            it("can parse successfull empty read responce") {
+                var result: Responce!
+                sut.parse(xml: noErrorEmptyResponce).then { responce in
+                    result = responce
+                }
+                
+                expect(result).toEventuallyNot(beNil())
+                expect(result.status).toEventually(beNil())
+                expect(result.responces).toEventuallyNot(beEmpty())
+                expect(result.responces[0]).toEventuallyNot(beNil())
+                expect(result.responces[0].status).toEventually(equal(0))
+                expect(result.responces[0].origine.name).toEventually(equal(commands[0].name))
+                expect(result.responces[0].content).toEventually(beNil())
+                
+                expect(result.responces[1]).toEventuallyNot(beNil())
+                expect(result.responces[1].status).toEventually(equal(0))
+                expect(result.responces[1].origine.name).toEventually(equal(commands[1].name))
+                expect(result.responces[1].content).toEventually(beNil())
             }
         }
     }
@@ -126,6 +152,15 @@ let anauthorisedResponce =
 <response>
     <Auth status = "401"></Auth >
     <Read status = "2"></Read >
+</response>
+"""
+
+let noErrorEmptyResponce =
+"""
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+    <Auth status = "0"></Auth >
+    <Read status = "0"></Read >
 </response>
 """
 

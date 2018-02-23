@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// Class that could be converter to XML
-public protocol XmlEncodable: class {
+/// Protocol that all DTO objects should implement to be converter into XML
+public protocol XmlEncodable {
     static var datatype: String { get }
     var xml: String { get }
 }

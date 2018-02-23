@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Timesheet: XmlEncodable {
+public struct Timesheet: XmlEncodable {
     
     let id: String?
     let name: String?

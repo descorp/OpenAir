@@ -9,12 +9,8 @@
 
 import Foundation
 
-public class ProjectTask: XmlEncodable {
+public struct ProjectTask: XmlEncodable {
     public static var datatype: String = "Projecttask"
     
     public let projectid: String?
-    
-    init(projectId: String) {
-        self.projectid = projectId
-    }
 }

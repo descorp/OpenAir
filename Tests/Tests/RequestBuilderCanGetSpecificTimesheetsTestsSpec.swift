@@ -9,7 +9,11 @@
 import Foundation
 import Quick
 import Nimble
-@testable import Onboarding
+#if os(iOS)
+    @testable import OpenAirSwift_iOS
+#else
+    @testable import OpenAirSwift_Mac
+#endif
 
 class RequestBuilderCanGetSpecificTimesheetsTestsSpec: QuickSpec {
     
@@ -35,7 +39,7 @@ class RequestBuilderCanGetSpecificTimesheetsTestsSpec: QuickSpec {
                 let field = "starts"
                 let date = Date()
                 
-                let login = Login(login: userName, password: password, company: company)
+                let login = Login(user: userName, password: password, company: company)
                 let specificDate = DateTime(year: date.year, month: date.month, day: date.day)
                 let request = requestBuilder.create(.auth(login: login),
                                                     .read(dataType: "Timesheet",

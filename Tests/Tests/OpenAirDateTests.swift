@@ -9,7 +9,12 @@
 import Foundation
 import Quick
 import Nimble
-@testable import Onboarding
+
+#if os(iOS)
+    @testable import OpenAirSwift_iOS
+#else
+    @testable import OpenAirSwift_Mac
+#endif
 
 class OpenAirDateTests: QuickSpec {
     

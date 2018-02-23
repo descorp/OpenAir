@@ -9,7 +9,11 @@
 import Foundation
 import Quick
 import Nimble
-@testable import Onboarding
+#if os(iOS)
+    @testable import OpenAirSwift_iOS
+#else
+    @testable import OpenAirSwift_Mac
+#endif
 
 class RequestBuilderCanGetProjectsTasksTestsSpec: QuickSpec {
     
@@ -32,8 +36,8 @@ class RequestBuilderCanGetProjectsTasksTestsSpec: QuickSpec {
                 let limit = 10
                 let projectId = "projectId"
                 
-                let login = Login(login: userName, password: password, company: company)
-                let projectTask = ProjectTask(projectId: projectId)
+                let login = Login(user: userName, password: password, company: company)
+                let projectTask = ProjectTask(projectid: projectId)
                 let request = requestBuilder.create(.auth(login: login),
                                                     .read(dataType: "Projecttask",
                                                           body: [projectTask],
