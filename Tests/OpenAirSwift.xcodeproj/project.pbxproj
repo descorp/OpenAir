@@ -97,6 +97,8 @@
 		40928BFA20401E5E00B15DFB /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40928BC320401AD600B15DFB /* FileLoader.swift */; };
 		40928BFB20401E5E00B15DFB /* GetProjectsResponceExample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 40928BC420401AD600B15DFB /* GetProjectsResponceExample.xml */; };
 		40928BFC20401E5E00B15DFB /* UserExample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 40928BC120401AD600B15DFB /* UserExample.xml */; };
+		40928BFD2040217700B15DFB /* XmlDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40928BB22040197F00B15DFB /* XmlDecoder.swift */; };
+		40928BFE2040217A00B15DFB /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40928BB32040197F00B15DFB /* XMLParser.swift */; };
 		40B720E4202471D4006B0F38 /* PayloadBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E3202471D4006B0F38 /* PayloadBuilderType.swift */; };
 		40B720E820247222006B0F38 /* Responce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720E720247222006B0F38 /* Responce.swift */; };
 		40B720EB20247241006B0F38 /* XMLParserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B720EA20247241006B0F38 /* XMLParserType.swift */; };
@@ -1041,7 +1043,9 @@
 				40B720FE20248EE4006B0F38 /* OpenAirDTOProtocols.swift in Sources */,
 				400E320B201AA06200C52350 /* OpenAirDTO+Utillities.swift in Sources */,
 				40928BE520401D6900B15DFB /* Task.swift in Sources */,
+				40928BFD2040217700B15DFB /* XmlDecoder.swift in Sources */,
 				40B720FF20248EE4006B0F38 /* PayloadBuilderType.swift in Sources */,
+				40928BFE2040217A00B15DFB /* XMLParser.swift in Sources */,
 				40928BDE20401D6900B15DFB /* Project.swift in Sources */,
 				40928BDD20401D6900B15DFB /* Address.swift in Sources */,
 				40928BE120401D6900B15DFB /* RequestConfiguration.swift in Sources */,
