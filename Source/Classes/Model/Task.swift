@@ -8,7 +8,8 @@
 
 import Foundation
 
-public class Task: OpenAirOutgoingDTO {
+public struct Task: XmlEncodable {
+    
     let date: DateTime
     let hours: Int
     let timesheetid: String

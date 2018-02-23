@@ -112,23 +112,9 @@ extension Command {
             break
             
         // MARK: Read
-        case .read(let dataType, let body, let rawAttributes):
+        case .read(let datatype, let body, let rawAttributes):
             tag = "Read"
             content = Command.getXml(from: body)
-            attributes = rawAttributes.reduce(" type=\"\(dataType)\"") { (current, next) in
-                return "\(current) \(next.asString)"
-            }
-            break
-        case .readSimple(let dataType, let rawAttributes):
-            tag = "Read"
-            attributes = rawAttributes.reduce(" type=\"\(dataType)\"") { (current, next) in
-                return "\(current) \(next.asString)"
-            }
-            break
-        case .readObject(let data, let rawAttributes):
-            tag = "Read"
-            content = data.xml
-            let datatype = type(of: data).datatype
             attributes = rawAttributes.reduce(" type=\"\(datatype)\"") { (current, next) in
                 return "\(current) \(next.asString)"
             }

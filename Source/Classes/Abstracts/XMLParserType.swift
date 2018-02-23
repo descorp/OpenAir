@@ -11,5 +11,6 @@ import PromiseKit
 
 protocol XMLParserType {
     func parse(xml: String) -> Promise<Responce>
+    func parse(xml: Data) -> Promise<Responce> 
     func isValid(xml: String) -> Bool
 }

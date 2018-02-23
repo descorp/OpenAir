@@ -8,12 +8,9 @@
 
 import Foundation
 
-open class User: OpenAirOutgoingDTO {
-    let id: String
+struct User: Decodable {
+    let id: Int
     let name: String
-    
-    public init(id: String, name: String) {
-        self.id = id
-        self.name = name
-    }
+    let job_codeid: Int
+    let created: DateTime
 }

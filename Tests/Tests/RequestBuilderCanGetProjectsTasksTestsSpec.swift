@@ -9,7 +9,6 @@
 import Foundation
 import Quick
 import Nimble
-
 #if os(iOS)
     @testable import OpenAirSwift_iOS
 #else
@@ -37,10 +36,12 @@ class RequestBuilderCanGetProjectsTasksTestsSpec: QuickSpec {
                 let limit = 10
                 let projectId = "projectId"
                 
-                let login = Login(login: userName, password: password, company: company)
-                let projectTask = ProjectTask(projectId: projectId)
+                let login = Login(user: userName, password: password, company: company)
+                let projectTask = ProjectTask(projectid: projectId)
                 let request = requestBuilder.create(.auth(login: login),
-                                                    .readObject(data: projectTask, attributes: [.method(.equalTo),.limit(limit)]))
+                                                    .read(dataType: "Projecttask",
+                                                          body: [projectTask],
+                                                          attributes: [.method(.equalTo),.limit(limit)]))
                 
                 let actual =
                 """

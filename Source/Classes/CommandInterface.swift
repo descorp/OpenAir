@@ -38,21 +38,23 @@ public enum Attributes {
 
 public enum Command {
     case time
-    case read(dataType: String, body: [OpenAirOutgoingDTO], attributes: [Attributes])
-    case readSimple(dataType: String, attributes: [Attributes])
-    case readObject(data: OpenAirOutgoingDTO, attributes: [Attributes])
-    case add(OpenAirOutgoingDTO)
-    case addWithLookup(OpenAirOutgoingDTO, lookup: String)
-    case modify(OpenAirOutgoingDTO)
-    case delete(OpenAirOutgoingDTO)
-    case createAccount(company: OpenAirOutgoingDTO, user: OpenAirOutgoingDTO)
-    case createUser(company: OpenAirOutgoingDTO, user: OpenAirOutgoingDTO)
+    case read(dataType: String, body: [XmlEncodable], attributes: [Attributes])
+    case add(XmlEncodable)
+    case addWithLookup(XmlEncodable, lookup: String)
+    case modify(XmlEncodable)
+    case delete(XmlEncodable)
+    case createAccount(company: XmlEncodable, user: XmlEncodable)
+    case createUser(company: XmlEncodable, user: XmlEncodable)
     case auth(login: Login)
     case remoteAuth(login: Login)
     case whoami
-    case approve(OpenAirOutgoingDTO, approval: Approval?)
-    case reject(OpenAirOutgoingDTO, approval: Approval?)
-    case unapprove(OpenAirOutgoingDTO, approval: Approval?)
-    case submit(OpenAirOutgoingDTO, approval: Approval?)
-    case report(OpenAirOutgoingDTO)
+    case approve(XmlEncodable, approval: Approval?)
+    case reject(XmlEncodable, approval: Approval?)
+    case unapprove(XmlEncodable, approval: Approval?)
+    case submit(XmlEncodable, approval: Approval?)
+    case report(XmlEncodable)
+    
+    public var name: String {
+        return String(describing: self).components(separatedBy: "(").first ?? ""
+    }
 }

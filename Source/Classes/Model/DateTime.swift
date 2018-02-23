@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class DateTime: OpenAirOutgoingDTO {
+public struct DateTime: XmlEncodable, Decodable {
     
     let year: Int?
     let month: Int?
@@ -17,6 +17,8 @@ public class DateTime: OpenAirOutgoingDTO {
     let minute: Int?
     let second: Int?
     
+    /// Type of a data in OpenAir objects domain.
+    /// For serialisation purposes you might want to have different implementations of the same datatype model
     public static var datatype: String {
         return "Date"
     }

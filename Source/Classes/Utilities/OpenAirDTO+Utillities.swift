@@ -16,10 +16,11 @@ func unwrap<T>(_ any: T) -> Any {
     return unwrap(first.value)
 }
 
-public extension OpenAirOutgoingDTO {
+public extension XmlEncodable {
     
     static var datatype: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
+        let str = "\(type(of: Self.self))".components(separatedBy: ".").first!
+        return str
     }
     
     var xml: String {
@@ -30,7 +31,7 @@ public extension OpenAirOutgoingDTO {
         let typename = type(of: self).datatype
         
         for (name, value) in keysValues.filter({ !($1 is NSNull) }) {
-            if let object = value as? OpenAirOutgoingDTO {
+            if let object = value as? XmlEncodable {
                 parameters.append("<\(name)>\(object.xml)</\(name)>")
                 continue
             }
@@ -50,7 +51,7 @@ extension Array where Element == String {
     }
 }
 
-extension Array where Element: OpenAirOutgoingDTO {
+extension Array where Element: XmlEncodable {
     public func xmlForEach() -> String {
         return self.reduce("") { (current, next) in
             return current + next.xml
@@ -60,7 +61,7 @@ extension Array where Element: OpenAirOutgoingDTO {
 
 extension Command {
     
-    static func getXml(from array: [OpenAirOutgoingDTO]) -> String {
+    static func getXml(from array: [XmlEncodable]) -> String {
         return array.reduce("") { (current, next) in
             return "\(current)\(next.xml)"
         }

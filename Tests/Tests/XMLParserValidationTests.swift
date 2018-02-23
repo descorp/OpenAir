@@ -9,7 +9,6 @@
 import Foundation
 import Quick
 import Nimble
-
 #if os(iOS)
     @testable import OpenAirSwift_iOS
 #else

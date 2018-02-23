@@ -10,10 +10,20 @@ import Foundation
 import PromiseKit
 
 public enum OpenAirError: Error {
+    case requestTerminated
     case urlError
-    case payloadError
+    case invalidResponce
+    case payloadGenerationError
     case requestParsingError
     case responceParsingError
+    case responce(Int, String)
+    case noContent
+}
+
+extension OpenAirError: Equatable {
+    public static func ==(lhs: OpenAirError, rhs: OpenAirError) -> Bool {
+        return String(describing: lhs) == String(describing: rhs)
+    }
 }
 
 /** This class manage all XML API requests to OpenAir **/

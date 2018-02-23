@@ -31,7 +31,7 @@ public struct RequestBuilder: PayloadBuilderType {
     
     public func create(_ commands: [Command]) -> String {
         let commandsContent = commands.reduce("") { (current, next) in
-            return current + "\r" + next.xml
+            return current + next.xml
         }
         
         let requestContent =

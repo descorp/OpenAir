@@ -9,7 +9,6 @@
 import Foundation
 import Quick
 import Nimble
-
 #if os(iOS)
     @testable import OpenAirSwift_iOS
 #else
@@ -38,7 +37,7 @@ class RequestBuilderCanAddTimesheetsTestsSpec: QuickSpec {
                 let endDate = Date()
                 let userid = "userid"
                 
-                let login = Login(login: userName, password: password, company: company)
+                let login = Login(user: userName, password: password, company: company)
                 let timesheet = Timesheet(starts: startDate, ends: endDate, userid: userid)
                 let request = requestBuilder.create(.auth(login: login), .add(timesheet))
                 

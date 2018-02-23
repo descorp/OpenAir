@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class RequestConfiguration {
+public struct RequestConfiguration {
     let API_version="1.0"
     let client_ver: String
     let client: String
@@ -30,7 +30,7 @@ public class RequestConfiguration {
      - Note: Contact the OpenAir Support Department or your account representative to request API access.
      **/
     public init(key: String,
-         namespace: String = "deafult",
+         namespace: String = "default",
          client: String = "test app",
          client_ver: String = "1.0") {
         self.key = key

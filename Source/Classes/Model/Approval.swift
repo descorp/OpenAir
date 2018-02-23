@@ -8,12 +8,7 @@
 
 import Foundation
 
-public class Approval: OpenAirOutgoingDTO {
+public struct Approval: XmlEncodable {
     let cc: String
     let note: String
-    
-    public init(cc: String, note: String) {
-        self.cc = cc
-        self.note = note
-    }
 }

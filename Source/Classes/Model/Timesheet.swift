@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Timesheet: OpenAirOutgoingDTO {
+public struct Timesheet: XmlEncodable {
     
     let id: String?
     let name: String?
@@ -26,9 +26,9 @@ public class Timesheet: OpenAirOutgoingDTO {
     
     public init(id: String) {
         self.id = id
-        starts = nil
-        ends = nil
-        name = nil
-        userid = nil
+        self.name = nil
+        self.starts = nil
+        self.ends = nil
+        self.userid = nil
     }
 }

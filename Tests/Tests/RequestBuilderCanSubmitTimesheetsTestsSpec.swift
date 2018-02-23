@@ -9,7 +9,6 @@
 import Foundation
 import Quick
 import Nimble
-
 #if os(iOS)
     @testable import OpenAirSwift_iOS
 #else
@@ -35,7 +34,7 @@ class RequestBuilderCanSubmitTimesheetsTestsSpec: QuickSpec {
             it("can create request to submit the timesheet ") {
                 
                 let timesheetId = ""
-                let login = Login(login: userName, password: password, company: company)
+                let login = Login(user: userName, password: password, company: company)
                 let timesheet = Timesheet(id: timesheetId)
                 let request = requestBuilder.create(.auth(login: login),
                                                     .submit(timesheet, approval: nil))

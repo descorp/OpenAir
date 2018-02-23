@@ -16,7 +16,6 @@ import Nimble
     @testable import OpenAirSwift_Mac
 #endif
 
-
 class OpenAirDateTests: QuickSpec {
     
     override func spec() {
